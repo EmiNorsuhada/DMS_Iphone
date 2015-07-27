@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6ABAFD5F1B54C070000EB3AF /* abstract_business_background_311474.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ABAFD5E1B54C070000EB3AF /* abstract_business_background_311474.jpg */; };
+		6ABAFD611B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ABAFD601B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg */; };
+		6ABAFD631B54D9EC000EB3AF /* BAckground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABAFD621B54D9EC000EB3AF /* BAckground.png */; };
+		6ABAFD651B54DB2C000EB3AF /* konzept_wallpaper_white1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABAFD641B54DB2C000EB3AF /* konzept_wallpaper_white1.png */; };
+		6ABAFD681B55FC43000EB3AF /* pdfView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAFD671B55FC43000EB3AF /* pdfView.m */; };
+		C373F22E1B62364B0018639D /* Docuflo Logo.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C373F22D1B62364B0018639D /* Docuflo Logo.PNG */; };
+		C373F2321B65CF980018639D /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = C373F2311B65CF980018639D /* background1.png */; };
+		C38476E71B4245D700063D90 /* DMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38476E51B4245D700063D90 /* DMSViewController.m */; };
+		C38476E81B4245D700063D90 /* DMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38476E61B4245D700063D90 /* DMSViewController.xib */; };
+		C38476EC1B424CF000063D90 /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38476EA1B424CF000063D90 /* ModuleViewController.m */; };
+		C38476ED1B424CF000063D90 /* ModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38476EB1B424CF000063D90 /* ModuleViewController.xib */; };
+		C38476F11B424EC200063D90 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38476EF1B424EC200063D90 /* SearchViewController.m */; };
+		C38476F21B424EC200063D90 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38476F01B424EC200063D90 /* SearchViewController.xib */; };
+		C38476F51B42506600063D90 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C38476F41B42506600063D90 /* line.png */; };
+		C38476F91B4252CA00063D90 /* 32px-Download_Files_4_You_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C38476F81B4252CA00063D90 /* 32px-Download_Files_4_You_Logo.png */; };
+		C38476FB1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C38476FA1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png */; };
+		C38476FD1B42532400063D90 /* Download_Files_4_You_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C38476FC1B42532400063D90 /* Download_Files_4_You_Logo.png */; };
+		C38476FF1B42572600063D90 /* small-button-th.png in Resources */ = {isa = PBXBuildFile; fileRef = C38476FE1B42572600063D90 /* small-button-th.png */; };
+		C38477011B42576F00063D90 /* small-button-md.png in Resources */ = {isa = PBXBuildFile; fileRef = C38477001B42576F00063D90 /* small-button-md.png */; };
+		F445F9B31805BAD9003CF95E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B21805BAD9003CF95E /* Foundation.framework */; };
+		F445F9B51805BAD9003CF95E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B41805BAD9003CF95E /* CoreGraphics.framework */; };
+		F445F9B71805BAD9003CF95E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B61805BAD9003CF95E /* UIKit.framework */; };
+		F445F9BD1805BAD9003CF95E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F445F9BB1805BAD9003CF95E /* InfoPlist.strings */; };
+		F445F9BF1805BAD9003CF95E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F445F9BE1805BAD9003CF95E /* main.m */; };
+		F445F9C31805BAD9003CF95E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F445F9C21805BAD9003CF95E /* AppDelegate.m */; };
+		F445F9C51805BAD9003CF95E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F445F9C41805BAD9003CF95E /* Images.xcassets */; };
+		F445F9CC1805BADA003CF95E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9CB1805BADA003CF95E /* XCTest.framework */; };
+		F445F9CD1805BADA003CF95E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B21805BAD9003CF95E /* Foundation.framework */; };
+		F445F9CE1805BADA003CF95E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B61805BAD9003CF95E /* UIKit.framework */; };
+		F445F9D61805BADA003CF95E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F445F9D41805BADA003CF95E /* InfoPlist.strings */; };
+		F445F9D81805BADA003CF95E /* HelloWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F445F9D71805BADA003CF95E /* HelloWorldTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F445F9CF1805BADA003CF95E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F445F9A71805BAD9003CF95E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F445F9AE1805BAD9003CF95E;
+			remoteInfo = HelloWorld;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6ABAFD5E1B54C070000EB3AF /* abstract_business_background_311474.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abstract_business_background_311474.jpg; sourceTree = "<group>"; };
+		6ABAFD601B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "orange-ribbon-abstract-hd1080p.jpg"; sourceTree = "<group>"; };
+		6ABAFD621B54D9EC000EB3AF /* BAckground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BAckground.png; sourceTree = "<group>"; };
+		6ABAFD641B54DB2C000EB3AF /* konzept_wallpaper_white1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = konzept_wallpaper_white1.png; sourceTree = "<group>"; };
+		6ABAFD661B55FC43000EB3AF /* pdfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pdfView.h; sourceTree = "<group>"; };
+		6ABAFD671B55FC43000EB3AF /* pdfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pdfView.m; sourceTree = "<group>"; };
+		C373F22D1B62364B0018639D /* Docuflo Logo.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Docuflo Logo.PNG"; sourceTree = "<group>"; };
+		C373F2311B65CF980018639D /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
+		C38476E41B4245D700063D90 /* DMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSViewController.h; sourceTree = "<group>"; };
+		C38476E51B4245D700063D90 /* DMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSViewController.m; sourceTree = "<group>"; };
+		C38476E61B4245D700063D90 /* DMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMSViewController.xib; sourceTree = "<group>"; };
+		C38476E91B424CF000063D90 /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
+		C38476EA1B424CF000063D90 /* ModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleViewController.m; sourceTree = "<group>"; };
+		C38476EB1B424CF000063D90 /* ModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModuleViewController.xib; sourceTree = "<group>"; };
+		C38476EE1B424EC200063D90 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		C38476EF1B424EC200063D90 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		C38476F01B424EC200063D90 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		C38476F41B42506600063D90 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		C38476F81B4252CA00063D90 /* 32px-Download_Files_4_You_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "32px-Download_Files_4_You_Logo.png"; sourceTree = "<group>"; };
+		C38476FA1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "64px-Download_Files_4_You_Logo.png"; sourceTree = "<group>"; };
+		C38476FC1B42532400063D90 /* Download_Files_4_You_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Download_Files_4_You_Logo.png; sourceTree = "<group>"; };
+		C38476FE1B42572600063D90 /* small-button-th.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-button-th.png"; sourceTree = "<group>"; };
+		C38477001B42576F00063D90 /* small-button-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-button-md.png"; sourceTree = "<group>"; };
+		F445F9AF1805BAD9003CF95E /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F445F9B21805BAD9003CF95E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F445F9B41805BAD9003CF95E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F445F9B61805BAD9003CF95E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F445F9BA1805BAD9003CF95E /* HelloWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloWorld-Info.plist"; sourceTree = "<group>"; };
+		F445F9BC1805BAD9003CF95E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F445F9BE1805BAD9003CF95E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F445F9C01805BAD9003CF95E /* HelloWorld-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloWorld-Prefix.pch"; sourceTree = "<group>"; };
+		F445F9C11805BAD9003CF95E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F445F9C21805BAD9003CF95E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F445F9C41805BAD9003CF95E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F445F9CA1805BADA003CF95E /* HelloWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F445F9CB1805BADA003CF95E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F445F9D31805BADA003CF95E /* HelloWorldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloWorldTests-Info.plist"; sourceTree = "<group>"; };
+		F445F9D51805BADA003CF95E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F445F9D71805BADA003CF95E /* HelloWorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F445F9AC1805BAD9003CF95E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F445F9B51805BAD9003CF95E /* CoreGraphics.framework in Frameworks */,
+				F445F9B71805BAD9003CF95E /* UIKit.framework in Frameworks */,
+				F445F9B31805BAD9003CF95E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F445F9C71805BADA003CF95E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F445F9CC1805BADA003CF95E /* XCTest.framework in Frameworks */,
+				F445F9CE1805BADA003CF95E /* UIKit.framework in Frameworks */,
+				F445F9CD1805BADA003CF95E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C38476F31B42504D00063D90 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				C373F2311B65CF980018639D /* background1.png */,
+				C373F22D1B62364B0018639D /* Docuflo Logo.PNG */,
+				C38477001B42576F00063D90 /* small-button-md.png */,
+				C38476FE1B42572600063D90 /* small-button-th.png */,
+				C38476FC1B42532400063D90 /* Download_Files_4_You_Logo.png */,
+				C38476FA1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png */,
+				C38476F81B4252CA00063D90 /* 32px-Download_Files_4_You_Logo.png */,
+				C38476F41B42506600063D90 /* line.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		F445F9A61805BAD9003CF95E = {
+			isa = PBXGroup;
+			children = (
+				F445F9B81805BAD9003CF95E /* HelloWorld */,
+				F445F9D11805BADA003CF95E /* HelloWorldTests */,
+				F445F9B11805BAD9003CF95E /* Frameworks */,
+				F445F9B01805BAD9003CF95E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F445F9B01805BAD9003CF95E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F445F9AF1805BAD9003CF95E /* HelloWorld.app */,
+				F445F9CA1805BADA003CF95E /* HelloWorldTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F445F9B11805BAD9003CF95E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F445F9B21805BAD9003CF95E /* Foundation.framework */,
+				F445F9B41805BAD9003CF95E /* CoreGraphics.framework */,
+				F445F9B61805BAD9003CF95E /* UIKit.framework */,
+				F445F9CB1805BADA003CF95E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F445F9B81805BAD9003CF95E /* HelloWorld */ = {
+			isa = PBXGroup;
+			children = (
+				F445F9C11805BAD9003CF95E /* AppDelegate.h */,
+				F445F9C21805BAD9003CF95E /* AppDelegate.m */,
+				F445F9C41805BAD9003CF95E /* Images.xcassets */,
+				F445F9B91805BAD9003CF95E /* Supporting Files */,
+				C38476E41B4245D700063D90 /* DMSViewController.h */,
+				C38476E51B4245D700063D90 /* DMSViewController.m */,
+				C38476E61B4245D700063D90 /* DMSViewController.xib */,
+				C38476E91B424CF000063D90 /* ModuleViewController.h */,
+				C38476EA1B424CF000063D90 /* ModuleViewController.m */,
+				C38476EB1B424CF000063D90 /* ModuleViewController.xib */,
+				C38476EE1B424EC200063D90 /* SearchViewController.h */,
+				C38476EF1B424EC200063D90 /* SearchViewController.m */,
+				C38476F01B424EC200063D90 /* SearchViewController.xib */,
+				6ABAFD661B55FC43000EB3AF /* pdfView.h */,
+				6ABAFD671B55FC43000EB3AF /* pdfView.m */,
+				6ABAFD5E1B54C070000EB3AF /* abstract_business_background_311474.jpg */,
+				6ABAFD601B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg */,
+				6ABAFD641B54DB2C000EB3AF /* konzept_wallpaper_white1.png */,
+				6ABAFD621B54D9EC000EB3AF /* BAckground.png */,
+			);
+			path = HelloWorld;
+			sourceTree = "<group>";
+		};
+		F445F9B91805BAD9003CF95E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C38476F31B42504D00063D90 /* Image */,
+				F445F9BA1805BAD9003CF95E /* HelloWorld-Info.plist */,
+				F445F9BB1805BAD9003CF95E /* InfoPlist.strings */,
+				F445F9BE1805BAD9003CF95E /* main.m */,
+				F445F9C01805BAD9003CF95E /* HelloWorld-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F445F9D11805BADA003CF95E /* HelloWorldTests */ = {
+			isa = PBXGroup;
+			children = (
+				F445F9D71805BADA003CF95E /* HelloWorldTests.m */,
+				F445F9D21805BADA003CF95E /* Supporting Files */,
+			);
+			path = HelloWorldTests;
+			sourceTree = "<group>";
+		};
+		F445F9D21805BADA003CF95E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F445F9D31805BADA003CF95E /* HelloWorldTests-Info.plist */,
+				F445F9D41805BADA003CF95E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F445F9AE1805BAD9003CF95E /* HelloWorld */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F445F9DB1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorld" */;
+			buildPhases = (
+				F445F9AB1805BAD9003CF95E /* Sources */,
+				F445F9AC1805BAD9003CF95E /* Frameworks */,
+				F445F9AD1805BAD9003CF95E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloWorld;
+			productName = HelloWorld;
+			productReference = F445F9AF1805BAD9003CF95E /* HelloWorld.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F445F9C91805BADA003CF95E /* HelloWorldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F445F9DE1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorldTests" */;
+			buildPhases = (
+				F445F9C61805BADA003CF95E /* Sources */,
+				F445F9C71805BADA003CF95E /* Frameworks */,
+				F445F9C81805BADA003CF95E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F445F9D01805BADA003CF95E /* PBXTargetDependency */,
+			);
+			name = HelloWorldTests;
+			productName = HelloWorldTests;
+			productReference = F445F9CA1805BADA003CF95E /* HelloWorldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F445F9A71805BAD9003CF95E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Appcoda;
+				TargetAttributes = {
+					F445F9AE1805BAD9003CF95E = {
+						DevelopmentTeam = 2YT8E2D9X6;
+					};
+					F445F9C91805BADA003CF95E = {
+						TestTargetID = F445F9AE1805BAD9003CF95E;
+					};
+				};
+			};
+			buildConfigurationList = F445F9AA1805BAD9003CF95E /* Build configuration list for PBXProject "HelloWorld" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F445F9A61805BAD9003CF95E;
+			productRefGroup = F445F9B01805BAD9003CF95E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F445F9AE1805BAD9003CF95E /* HelloWorld */,
+				F445F9C91805BADA003CF95E /* HelloWorldTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F445F9AD1805BAD9003CF95E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C373F22E1B62364B0018639D /* Docuflo Logo.PNG in Resources */,
+				6ABAFD611B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg in Resources */,
+				C38476FF1B42572600063D90 /* small-button-th.png in Resources */,
+				6ABAFD651B54DB2C000EB3AF /* konzept_wallpaper_white1.png in Resources */,
+				C38476F91B4252CA00063D90 /* 32px-Download_Files_4_You_Logo.png in Resources */,
+				F445F9BD1805BAD9003CF95E /* InfoPlist.strings in Resources */,
+				C38476F51B42506600063D90 /* line.png in Resources */,
+				C38476E81B4245D700063D90 /* DMSViewController.xib in Resources */,
+				C38476F21B424EC200063D90 /* SearchViewController.xib in Resources */,
+				6ABAFD631B54D9EC000EB3AF /* BAckground.png in Resources */,
+				C38476ED1B424CF000063D90 /* ModuleViewController.xib in Resources */,
+				C373F2321B65CF980018639D /* background1.png in Resources */,
+				6ABAFD5F1B54C070000EB3AF /* abstract_business_background_311474.jpg in Resources */,
+				F445F9C51805BAD9003CF95E /* Images.xcassets in Resources */,
+				C38476FD1B42532400063D90 /* Download_Files_4_You_Logo.png in Resources */,
+				C38476FB1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png in Resources */,
+				C38477011B42576F00063D90 /* small-button-md.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F445F9C81805BADA003CF95E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F445F9D61805BADA003CF95E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F445F9AB1805BAD9003CF95E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F445F9C31805BAD9003CF95E /* AppDelegate.m in Sources */,
+				C38476EC1B424CF000063D90 /* ModuleViewController.m in Sources */,
+				C38476E71B4245D700063D90 /* DMSViewController.m in Sources */,
+				C38476F11B424EC200063D90 /* SearchViewController.m in Sources */,
+				F445F9BF1805BAD9003CF95E /* main.m in Sources */,
+				6ABAFD681B55FC43000EB3AF /* pdfView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F445F9C61805BADA003CF95E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F445F9D81805BADA003CF95E /* HelloWorldTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F445F9D01805BADA003CF95E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F445F9AE1805BAD9003CF95E /* HelloWorld */;
+			targetProxy = F445F9CF1805BADA003CF95E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F445F9BB1805BAD9003CF95E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F445F9BC1805BAD9003CF95E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F445F9D41805BADA003CF95E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F445F9D51805BADA003CF95E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F445F9D91805BADA003CF95E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F445F9DA1805BADA003CF95E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F445F9DC1805BADA003CF95E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F445F9DD1805BADA003CF95E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F445F9DF1805BADA003CF95E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloWorld.app/HelloWorld";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HelloWorldTests/HelloWorldTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F445F9E01805BADA003CF95E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloWorld.app/HelloWorld";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				INFOPLIST_FILE = "HelloWorldTests/HelloWorldTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F445F9AA1805BAD9003CF95E /* Build configuration list for PBXProject "HelloWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F445F9D91805BADA003CF95E /* Debug */,
+				F445F9DA1805BADA003CF95E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F445F9DB1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F445F9DC1805BADA003CF95E /* Debug */,
+				F445F9DD1805BADA003CF95E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F445F9DE1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F445F9DF1805BADA003CF95E /* Debug */,
+				F445F9E01805BADA003CF95E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F445F9A71805BAD9003CF95E /* Project object */;
+}
