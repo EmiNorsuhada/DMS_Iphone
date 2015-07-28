@@ -24,24 +24,24 @@
                     <color key="tintColor" red="0.78346578259012212" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xxg-tY-Y6P">
-                    <rect key="frame" x="15" y="165" width="290" height="22"/>
+                    <rect key="frame" x="15" y="292" width="290" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IhH-FD-jIt">
-                    <rect key="frame" x="15" y="202" width="290" height="22"/>
+                    <rect key="frame" x="15" y="330" width="290" height="22"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CGz-aE-QQX">
-                    <rect key="frame" x="15" y="238" width="290" height="22"/>
+                    <rect key="frame" x="15" y="367" width="290" height="22"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agm-AD-4nQ">
-                    <rect key="frame" x="114" y="268" width="93" height="28"/>
+                    <rect key="frame" x="114" y="397" width="93" height="28"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                     <state key="normal" title="LOGIN">
                         <color key="titleShadowColor" red="0.76470588240000004" green="0.83137254900000002" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -51,13 +51,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7O-h5-39Y">
-                    <rect key="frame" x="7" y="147" width="305" height="155"/>
+                    <rect key="frame" x="8" y="276" width="305" height="155"/>
                     <color key="backgroundColor" red="0.84895169005102045" green="0.84895169005102045" blue="0.84895169005102045" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Docuflo Logo.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="emB-8C-Fhs">
-                    <rect key="frame" x="55" y="65" width="208" height="74"/>
+                    <rect key="frame" x="56" y="102" width="208" height="74"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>

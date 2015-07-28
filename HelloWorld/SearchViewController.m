@@ -46,7 +46,7 @@ NSString *strImageName;
 	count = 0;
 	temp = @"";
 	
-//	UserNameTxt.text = @"Jacob Chin";
+	UserNameTxt.text = @"Jacob*";
 	
     // Do any additional setup after loading the view from its nib.
 }
@@ -65,9 +65,6 @@ NSString *strImageName;
 
 - (IBAction)SearchBtn:(id)sender
 {
-    //a-sync or xmlparser
-    //http://192.168.2.28/DocufloSDK/docuflosdk.asmx/ProfileSearchMobile?Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1
-	
 	
 	[self parseXMLFileAtURL];
 	[self.SearchTableView reloadData];
@@ -75,6 +72,23 @@ NSString *strImageName;
 	[UserNameTxt resignFirstResponder];
 }
 
+- (IBAction)TxtDidEnd:(id)sender {
+	
+//	[self parseXMLFileAtURL];
+//	[self.SearchTableView reloadData];
+//	
+//	[UserNameTxt resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	
+	[self parseXMLFileAtURL];
+	[self.SearchTableView reloadData];
+	
+	[UserNameTxt resignFirstResponder];
+	
+	return NO;
+}
 
 #pragma mark - XMLParser
 
@@ -211,52 +225,63 @@ NSString *strImageName;
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	[[cell.contentView viewWithTag:2001] removeFromSuperview ];
-	[[cell.contentView viewWithTag:2002] removeFromSuperview ];
-	[[cell.contentView viewWithTag:2003] removeFromSuperview ];
-	[[cell.contentView viewWithTag:2004] removeFromSuperview ];
-	[[cell.contentView viewWithTag:2005] removeFromSuperview ];
 	
 	if (articles.count != 0) {
 		if(indexPath.row < [articles count]){
-            
-            UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(2,0, 150, 30)];
-            label1.text= [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-			label1.font =[UIFont systemFontOfSize:11.0];
-            label1.tag = 2001;
-            label1.backgroundColor =[UIColor clearColor];
-            [cell.contentView addSubview:label1];
-            
-            UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(70,0, 150, 30)];
-            label2.text= [[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-			label2.font =[UIFont systemFontOfSize:11.0];
-            label2.tag = 2002;
-            [cell.contentView addSubview:label2];
-            
-            UILabel *label3=[[UILabel alloc]initWithFrame:CGRectMake(160,0, 80, 30)];
-            label3.text= [[articles objectAtIndex:indexPath.row ]objectForKey:@"ImageName"];
-			label3.font =[UIFont systemFontOfSize:11.0];
-            label3.tag = 2003;
-            [cell.contentView addSubview:label3];	
-
-            UILabel *label4=[[UILabel alloc]initWithFrame:CGRectMake(200,0, 80, 30)];
-            label4.text= [[articles objectAtIndex:indexPath.row ]objectForKey:@"LicNo"];
-			label4.font =[UIFont systemFontOfSize:11.0];
-            label4.tag = 2004;
-            [cell.contentView addSubview:label4];
-		
-            UILabel *label5=[[UILabel alloc]initWithFrame:CGRectMake(270,0, 80, 30)];
-            label5.text= [[articles objectAtIndex:indexPath.row ]objectForKey:@"VerID"];
-			label5.font =[UIFont systemFontOfSize:11.0];
-            label5.tag = 2005;
-            [cell.contentView addSubview:label5];
-
-            
+			
+			NSString *imgName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"ImageName"];
+			NSArray *split = [imgName componentsSeparatedByString:@"."];
+			NSString *imgType = [split objectAtIndex:[split count] - 1];
+			
+			//			NSLog(@"tt: %@", imgType);
+			
+			UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
+			
+			if ([imgType isEqualToString:@"jpg"]) {
+				imgView.image = [UIImage imageNamed:@"JPEG.png"];
+			}
+			else if ([imgType isEqualToString:@"tif"]) {
+				imgView.image = [UIImage imageNamed:@"tiff-128.png"];
+			}
+			else if ([imgType isEqualToString:@"pdf"]) {
+				imgView.image = [UIImage imageNamed:@"PDF.png"];
+			}
+			else if ([imgType isEqualToString:@"gif"]) {
+				imgView.image = [UIImage imageNamed:@"gif.png"];
+			}
+			else if ([imgType isEqualToString:@"IMG"]) {
+				imgView.image = [UIImage imageNamed:@"IMG.png"];
+			}
+			else {
+				imgView.image = [UIImage imageNamed:@"doc.png"];
+			}
+			[cell.contentView addSubview:imgView];
+			
+			
+			
+			NSString *Name = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
+			NSString *AppNo = [[articles objectAtIndex:indexPath.row ]objectForKey:@"LicNo"];
+			NSString *ID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
+			NSString *strPrint = [NSString stringWithFormat:@"%@\n%@, %@",Name, AppNo, ID];
+			
+			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50,0, 300, 45)];
+			label1.text = strPrint;
+			label1.tag = 2001;
+			label1.font = [UIFont systemFontOfSize:14.0];
+			label1.backgroundColor =[UIColor clearColor];
+			label1.numberOfLines = 2;
+			[cell.contentView addSubview:label1];
 		}
 	}
 	
 	[cell setAccessoryType: UITableViewCellAccessoryDisclosureIndicator];
 	
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	cell.backgroundColor = [UIColor clearColor];
+	cell.backgroundView.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - Table view delegate

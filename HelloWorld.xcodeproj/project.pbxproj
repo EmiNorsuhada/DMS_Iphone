@@ -26,6 +26,15 @@
 		C38476FD1B42532400063D90 /* Download_Files_4_You_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C38476FC1B42532400063D90 /* Download_Files_4_You_Logo.png */; };
 		C38476FF1B42572600063D90 /* small-button-th.png in Resources */ = {isa = PBXBuildFile; fileRef = C38476FE1B42572600063D90 /* small-button-th.png */; };
 		C38477011B42576F00063D90 /* small-button-md.png in Resources */ = {isa = PBXBuildFile; fileRef = C38477001B42576F00063D90 /* small-button-md.png */; };
+		C3977D491B672BE000EA5B33 /* tiff-128.png in Resources */ = {isa = PBXBuildFile; fileRef = C3977D481B672BE000EA5B33 /* tiff-128.png */; };
+		C39D16981B672D8800A90D38 /* ai.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16901B672D8800A90D38 /* ai.png */; };
+		C39D16991B672D8800A90D38 /* doc.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16911B672D8800A90D38 /* doc.png */; };
+		C39D169A1B672D8800A90D38 /* file-xml.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16921B672D8800A90D38 /* file-xml.png */; };
+		C39D169B1B672D8800A90D38 /* gif.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16931B672D8800A90D38 /* gif.png */; };
+		C39D169C1B672D8800A90D38 /* IMG.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16941B672D8800A90D38 /* IMG.png */; };
+		C39D169D1B672D8800A90D38 /* JPEG.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16951B672D8800A90D38 /* JPEG.png */; };
+		C39D169E1B672D8800A90D38 /* PDF.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16961B672D8800A90D38 /* PDF.png */; };
+		C39D169F1B672D8800A90D38 /* tif.png in Resources */ = {isa = PBXBuildFile; fileRef = C39D16971B672D8800A90D38 /* tif.png */; };
 		F445F9B31805BAD9003CF95E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B21805BAD9003CF95E /* Foundation.framework */; };
 		F445F9B51805BAD9003CF95E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B41805BAD9003CF95E /* CoreGraphics.framework */; };
 		F445F9B71805BAD9003CF95E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F445F9B61805BAD9003CF95E /* UIKit.framework */; };
@@ -74,6 +83,15 @@
 		C38476FC1B42532400063D90 /* Download_Files_4_You_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Download_Files_4_You_Logo.png; sourceTree = "<group>"; };
 		C38476FE1B42572600063D90 /* small-button-th.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-button-th.png"; sourceTree = "<group>"; };
 		C38477001B42576F00063D90 /* small-button-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-button-md.png"; sourceTree = "<group>"; };
+		C3977D481B672BE000EA5B33 /* tiff-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tiff-128.png"; sourceTree = "<group>"; };
+		C39D16901B672D8800A90D38 /* ai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ai.png; sourceTree = "<group>"; };
+		C39D16911B672D8800A90D38 /* doc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doc.png; sourceTree = "<group>"; };
+		C39D16921B672D8800A90D38 /* file-xml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "file-xml.png"; sourceTree = "<group>"; };
+		C39D16931B672D8800A90D38 /* gif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gif.png; sourceTree = "<group>"; };
+		C39D16941B672D8800A90D38 /* IMG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG.png; sourceTree = "<group>"; };
+		C39D16951B672D8800A90D38 /* JPEG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JPEG.png; sourceTree = "<group>"; };
+		C39D16961B672D8800A90D38 /* PDF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDF.png; sourceTree = "<group>"; };
+		C39D16971B672D8800A90D38 /* tif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tif.png; sourceTree = "<group>"; };
 		F445F9AF1805BAD9003CF95E /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F445F9B21805BAD9003CF95E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F445F9B41805BAD9003CF95E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +137,15 @@
 		C38476F31B42504D00063D90 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C39D16901B672D8800A90D38 /* ai.png */,
+				C39D16911B672D8800A90D38 /* doc.png */,
+				C39D16921B672D8800A90D38 /* file-xml.png */,
+				C39D16931B672D8800A90D38 /* gif.png */,
+				C39D16941B672D8800A90D38 /* IMG.png */,
+				C39D16951B672D8800A90D38 /* JPEG.png */,
+				C39D16961B672D8800A90D38 /* PDF.png */,
+				C39D16971B672D8800A90D38 /* tif.png */,
+				C3977D481B672BE000EA5B33 /* tiff-128.png */,
 				C373F2311B65CF980018639D /* background1.png */,
 				C373F22D1B62364B0018639D /* Docuflo Logo.PNG */,
 				C38477001B42576F00063D90 /* small-button-md.png */,
@@ -295,17 +322,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39D169C1B672D8800A90D38 /* IMG.png in Resources */,
+				C39D169B1B672D8800A90D38 /* gif.png in Resources */,
+				C39D16991B672D8800A90D38 /* doc.png in Resources */,
 				C373F22E1B62364B0018639D /* Docuflo Logo.PNG in Resources */,
 				6ABAFD611B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg in Resources */,
+				C39D169A1B672D8800A90D38 /* file-xml.png in Resources */,
 				C38476FF1B42572600063D90 /* small-button-th.png in Resources */,
 				6ABAFD651B54DB2C000EB3AF /* konzept_wallpaper_white1.png in Resources */,
 				C38476F91B4252CA00063D90 /* 32px-Download_Files_4_You_Logo.png in Resources */,
+				C39D169D1B672D8800A90D38 /* JPEG.png in Resources */,
 				F445F9BD1805BAD9003CF95E /* InfoPlist.strings in Resources */,
 				C38476F51B42506600063D90 /* line.png in Resources */,
 				C38476E81B4245D700063D90 /* DMSViewController.xib in Resources */,
 				C38476F21B424EC200063D90 /* SearchViewController.xib in Resources */,
 				6ABAFD631B54D9EC000EB3AF /* BAckground.png in Resources */,
+				C39D169E1B672D8800A90D38 /* PDF.png in Resources */,
+				C39D16981B672D8800A90D38 /* ai.png in Resources */,
+				C3977D491B672BE000EA5B33 /* tiff-128.png in Resources */,
 				C38476ED1B424CF000063D90 /* ModuleViewController.xib in Resources */,
+				C39D169F1B672D8800A90D38 /* tif.png in Resources */,
 				C373F2321B65CF980018639D /* background1.png in Resources */,
 				6ABAFD5F1B54C070000EB3AF /* abstract_business_background_311474.jpg in Resources */,
 				F445F9C51805BAD9003CF95E /* Images.xcassets in Resources */,

@@ -27,6 +27,7 @@
 
 - (IBAction)BackBtn:(id)sender;
 - (IBAction)SearchBtn:(id)sender;
+- (IBAction)TxtDidEnd:(id)sender;
 - (void)parseXMLFileAtURL:(NSString *)URL;
 
 @end
