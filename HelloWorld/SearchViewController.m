@@ -225,6 +225,7 @@ NSString *strImageName;
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	[[cell.contentView viewWithTag:2001] removeFromSuperview ];
+	[[cell.contentView viewWithTag:2002] removeFromSuperview ];
 	
 	if (articles.count != 0) {
 		if(indexPath.row < [articles count]){
@@ -262,19 +263,27 @@ NSString *strImageName;
 			NSString *Name = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
 			NSString *AppNo = [[articles objectAtIndex:indexPath.row ]objectForKey:@"LicNo"];
 			NSString *ID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-			NSString *strPrint = [NSString stringWithFormat:@"%@\n%@, %@",Name, AppNo, ID];
+			NSString *strPrint = [NSString stringWithFormat:@"%@, %@",AppNo, ID];
 			
-			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50,0, 300, 45)];
-			label1.text = strPrint;
+			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, -5, 300, 45)];
+			label1.text = Name;
 			label1.tag = 2001;
 			label1.font = [UIFont systemFontOfSize:14.0];
 			label1.backgroundColor =[UIColor clearColor];
-			label1.numberOfLines = 2;
+//			label1.numberOfLines = 2;
 			[cell.contentView addSubview:label1];
+			
+			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
+			label2.text = strPrint;
+			label2.tag = 2002;
+			label2.font = [UIFont systemFontOfSize:10.0];
+			label2.textColor = [UIColor grayColor];
+			label2.backgroundColor =[UIColor clearColor];
+			[cell.contentView addSubview:label2];
 		}
 	}
 	
-	[cell setAccessoryType: UITableViewCellAccessoryDisclosureIndicator];
+	[cell setAccessoryType: UITableViewCellAccessoryDetailButton];
 	
 	return cell;
 }
