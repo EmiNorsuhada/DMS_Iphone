@@ -320,6 +320,20 @@ NSString *strImageName;
     NSUserDefaults *pdfURL = [NSUserDefaults standardUserDefaults];
     NSString *Url =LAstURL;
     
+    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
+    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"ImageName"];
+    NSString * IdNO =[[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:NameValue forKey:@"NameValue"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:ImageNameValue forKey:@"ApplicationNo"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:IdNO forKey:@"ID"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [pdfURL setObject:Url forKey:@"URL"];
     pdfView *viewController = [[pdfView alloc] init];
     [self presentViewController:viewController animated:YES completion:nil];

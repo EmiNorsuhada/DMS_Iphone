@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface pdfView : UIViewController <UIWebViewDelegate> {
+@interface pdfView : UIViewController <UIWebViewDelegate,UIScrollViewDelegate> {
 	
 	UIButton *BtnClose;
 	
