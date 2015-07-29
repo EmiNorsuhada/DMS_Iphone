@@ -60,12 +60,21 @@
 	
 	UserName.text = @"admin";
 	PassWord.text = @"password";
-	txtURL.text = @"http://192.168.2.28/docufloSDK/docuflosdk.asmx/Login";
+	txtURL.text = @"http://192.168.2.28";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	
+	[UserName resignFirstResponder];
+	[PassWord resignFirstResponder];
+	[txtURL resignFirstResponder];
+	
+	return NO;
 }
 
 - (IBAction)LoginBtn:(id)sender
@@ -75,7 +84,7 @@
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 	
-	NSString *url = [NSString stringWithFormat:@"%@",txtURL.text];
+	NSString *url = [NSString stringWithFormat:@"%@/docufloSDK/docuflosdk.asmx/Login",txtURL.text];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
