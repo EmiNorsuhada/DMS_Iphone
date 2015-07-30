@@ -263,7 +263,8 @@ NSString *strImageName;
 			NSString *Name = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
 			NSString *AppNo = [[articles objectAtIndex:indexPath.row ]objectForKey:@"LicNo"];
 			NSString *ID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-			NSString *strPrint = [NSString stringWithFormat:@"%@, %@",AppNo, ID];
+            NSString *DocType = [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocType"];
+			NSString *strPrint = [NSString stringWithFormat:@"%@, %@, %@",AppNo, ID,DocType];
 			
 			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, -5, 300, 45)];
 			label1.text = Name;
@@ -330,7 +331,7 @@ NSString *strImageName;
     NSString *Url =LAstURL;
     
     NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"ImageName"];
+    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocType"];
     NSString * IdNO =[[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
     
     

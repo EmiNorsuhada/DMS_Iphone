@@ -75,6 +75,7 @@
     lblNAme.font =[UIFont fontWithName:@"HelveticaNeue-Light" size:34];
     lblNAme.textColor=[UIColor whiteColor];
     lblNAme.userInteractionEnabled=NO;
+    lblNAme.adjustsFontSizeToFitWidth = YES;
     lblNAme.text =NameValue;
     [self.view addSubview:lblNAme];
     
