@@ -1,14 +1,14 @@
 //
-//  SearchViewController.h
+//  ProfileViewController.h
 //  HelloWorld
 //
-//  Created by Emi on 30/6/15.
+//  Created by Prem on 30/6/15.
 //  Copyright (c) 2015 Appcoda. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
+@interface IndexViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
 	
 	NSXMLParser *rssParser;
 	NSMutableArray *articles;
@@ -29,7 +29,5 @@
 - (IBAction)SearchBtn:(id)sender;
 - (IBAction)TxtDidEnd:(id)sender;
 - (void)parseXMLFileAtURL:(NSString *)URL;
-- (IBAction)upload:(id)sender;
-
 
 @end

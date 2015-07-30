@@ -2,21 +2,21 @@
 //  SearchViewController.m
 //  HelloWorld
 //
-//  Created by Emi on 30/6/15.
+//  Created by Prem on 30/6/15.
 //  Copyright (c) 2015 Appcoda. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "ProfileViewController.h"
 #import "ModuleViewController.h"
 #import "DMSViewController.h"
-#import "ProfileViewController.h"
 #import "pdfView.h"
+#import "IndexViewController.h"
 
-@interface SearchViewController ()
+@interface ProfileViewController ()
 
 @end
 
-@implementation SearchViewController
+@implementation ProfileViewController
 @synthesize UserNameTxt,ProfileNameTxt;
 
 NSString *temp;
@@ -44,6 +44,7 @@ NSString *strImageName;
 {
     [super viewDidLoad];
 	[self.SearchTableView sizeToFit];
+    [self parseXMLFileAtURL];
 	count = 0;
 	temp = @"";
 	
@@ -95,14 +96,40 @@ NSString *strImageName;
 
 - (void)parseXMLFileAtURL
 {
+//    NSString *post = [NSString stringWithFormat:@"profileID=%@&profileName=%@",@"",@""];
+//    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+//    NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    
+//    NSString *url = [NSString stringWithFormat:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/LoadProfiles"];
+//    [request setURL:[NSURL URLWithString:url]];
+//    [request setHTTPMethod:@"POST"];
+//    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//    [request setHTTPBody:postData];
+//    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//    NSData *urlData;
+//    NSURLResponse *response;
+//    NSError *error;
+//    urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//    if(conn) {
+//        NSLog(@"Connection Successful");
+//    } else {
+//        NSLog(@"Connection could not be made");
+//    }
+//    NSString *aStr = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
+
+    
+    
 	//NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
-     NSString *post = [NSString stringWithFormat:@"Profile_Name=%@&Column_Desc=Name|ID20No&Column_Data=%@|1",@"PPL",UserNameTxt.text];
+     NSString *post = [NSString stringWithFormat:@"profileID=%@&profileName=%@",@"",@""];
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 	
 	
-	[request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/ProfileSearchMobile"]];
+	[request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/LoadProfiles"]];
+    
 	
 	[request setHTTPMethod:@"POST"];
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -120,8 +147,7 @@ NSString *strImageName;
     }
     NSString *aStr = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 
-    
-    
+	
 	NSData *xmlFile;
 	xmlFile = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
 	
@@ -158,7 +184,7 @@ NSString *strImageName;
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
 	currentElement = [elementName copy];
 	ElementValue = [[NSMutableString alloc] init];
-	if ([elementName isEqualToString:@"DataProfileResult"]) {
+	if ([elementName isEqualToString:@"Profiles"]) {
 		item = [[NSMutableDictionary alloc] init];
 	}
 }
@@ -168,39 +194,21 @@ NSString *strImageName;
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
 	
-//		NSLog(@"%d-set into Item: elementName: %@ ElementValue: %@", count, elementName, ElementValue);
+		NSLog(@"%d-set into Item: elementName: %@ ElementValue: %@", count, elementName, ElementValue);
 	
-		if ([temp isEqualToString:@"Name"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strName = ElementValue;
-		}
-		else if ([temp isEqualToString:@"IDNo"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strIDno = ElementValue;
-		}
-		else if ([temp isEqualToString:@"LicNo"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strLicNO = ElementValue;
-		}
-		else if ([temp isEqualToString:@"DocType"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strDocType = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"VerID"]) {
-			strVerID = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"ProfileID"]) {
-			strProfileID = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"DocID"]) {
-			strDocID = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"ImageName"]) {
-			strImageName = ElementValue;
-		}
-	
-		if ([elementName isEqualToString:@"DataProfileResult"]) {
-			NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:strName, @"Name", strIDno, @"IDNo", strLicNO, @"LicNo", strDocType, @"DocType", strVerID, @"VerID", strProfileID, @"ProfileID", strDocID, @"DocID", strImageName, @"ImageName",nil];
-			[articles addObject:[tempData copy]];
-		}
+    if ([elementName isEqualToString:@"profileID"]) {
+        strVerID = ElementValue;
+    }
+    else if ([elementName isEqualToString:@"profileName"]) {
+        strProfileID = ElementValue;
+    }
+    
+    if ([elementName isEqualToString:@"Profiles"]) {
+        NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:strVerID, @"profileID", strProfileID, @"profileName",nil];
+        [articles addObject:[tempData copy]];
+    }
+
 		
-		temp = ElementValue;
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
@@ -251,35 +259,16 @@ NSString *strImageName;
 			//			NSLog(@"tt: %@", imgType);
 			
 			UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
+            imgView.image = [UIImage imageNamed:@"doc.png"];
 			
-			if ([imgType isEqualToString:@"jpg"]) {
-				imgView.image = [UIImage imageNamed:@"JPEG.png"];
-			}
-			else if ([imgType isEqualToString:@"tif"]) {
-				imgView.image = [UIImage imageNamed:@"tiff-128.png"];
-			}
-			else if ([imgType isEqualToString:@"pdf"]) {
-				imgView.image = [UIImage imageNamed:@"PDF.png"];
-			}
-			else if ([imgType isEqualToString:@"gif"]) {
-				imgView.image = [UIImage imageNamed:@"gif.png"];
-			}
-			else if ([imgType isEqualToString:@"IMG"]) {
-				imgView.image = [UIImage imageNamed:@"IMG.png"];
-			}
-			else {
-				imgView.image = [UIImage imageNamed:@"doc.png"];
-			}
 			[cell.contentView addSubview:imgView];
 			
-			NSString *Name = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-			NSString *AppNo = [[articles objectAtIndex:indexPath.row ]objectForKey:@"LicNo"];
-			NSString *ID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-            NSString *DocType = [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocType"];
-			NSString *strPrint = [NSString stringWithFormat:@"%@, %@, %@",AppNo, ID,DocType];
+			NSString *profileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
+			NSString *profileName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
+			
 			
 			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, -5, 300, 45)];
-			label1.text = Name;
+			label1.text = profileName;
 			label1.tag = 2001;
 			label1.font = [UIFont systemFontOfSize:14.0];
 			label1.backgroundColor =[UIColor clearColor];
@@ -287,7 +276,7 @@ NSString *strImageName;
 			[cell.contentView addSubview:label1];
 			
 			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
-			label2.text = strPrint;
+			label2.text = profileID;
 			label2.tag = 2002;
 			label2.font = [UIFont systemFontOfSize:10.0];
 			label2.textColor = [UIColor grayColor];
@@ -312,62 +301,20 @@ NSString *strImageName;
 {
      NSLog(@"celltext %@", [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocID"]);
     
-    NSString *ProfileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"ProfileID"];
-    NSString *VerID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"VerID"];
-    NSString *post = [NSString stringWithFormat:@"VerID=%@&DocProfileID=%@&FileType=1",VerID,ProfileID];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/ViewFileMobile"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    NSData *urlData;
-    NSURLResponse *response;
-    NSError *error;
-    urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if(conn) {
-        NSLog(@"Connection Successful");
-    } else {
-        NSLog(@"Connection could not be made");
-    }
-    NSString *aStr = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
-    NSLog(@"astr %@",aStr);
-    NSArray *Separate = [aStr componentsSeparatedByString:@">"];
-    NSString *DEleteAfter = [Separate objectAtIndex:2];
-    NSArray  *LastTrim = [DEleteAfter componentsSeparatedByString:@"</string"];
-    NSString *LAstURL = [LastTrim objectAtIndex:0];
-    NSUserDefaults *pdfURL = [NSUserDefaults standardUserDefaults];
-    NSString *Url =LAstURL;
-    
-    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocType"];
-    NSString * IdNO =[[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-    
-    
+    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
+    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
+   
+
     [[NSUserDefaults standardUserDefaults] setObject:NameValue forKey:@"NameValue"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [[NSUserDefaults standardUserDefaults] setObject:ImageNameValue forKey:@"ApplicationNo"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+
     
-    [[NSUserDefaults standardUserDefaults] setObject:IdNO forKey:@"ID"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [pdfURL setObject:Url forKey:@"URL"];
-    pdfView *viewController = [[pdfView alloc] init];
+    IndexViewController *viewController = [[IndexViewController alloc] init];
     [self presentViewController:viewController animated:YES completion:nil];
     
 }
 
-- (IBAction)upload:(id)sender
-{
-    
-    ProfileViewController *controller = [[ProfileViewController alloc]init];
-    [self presentViewController:controller animated:YES completion:Nil];
-
-    
-}
 @end

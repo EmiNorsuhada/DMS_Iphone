@@ -2,33 +2,30 @@
 //  SearchViewController.m
 //  HelloWorld
 //
-//  Created by Emi on 30/6/15.
+//  Created by Prem on 30/6/15.
 //  Copyright (c) 2015 Appcoda. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "ProfileViewController.h"
 #import "ModuleViewController.h"
 #import "DMSViewController.h"
-#import "ProfileViewController.h"
+#import "IndexViewController.h"
 #import "pdfView.h"
 
-@interface SearchViewController ()
+@interface IndexViewController  ()
 
 @end
 
-@implementation SearchViewController
+@implementation IndexViewController
 @synthesize UserNameTxt,ProfileNameTxt;
 
 NSString *temp;
 int count;
-NSString *strName;
-NSString *strIDno;
-NSString *strLicNO;
-NSString *strDocType;
-NSString *strVerID;
-NSString *strProfileID;
-NSString *strDocID;
-NSString *strImageName;
+NSString *colID;
+NSString *colName;
+NSString *colDesc;
+NSString *colData;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,6 +41,7 @@ NSString *strImageName;
 {
     [super viewDidLoad];
 	[self.SearchTableView sizeToFit];
+    [self parseXMLFileAtURL];
 	count = 0;
 	temp = @"";
 	
@@ -95,14 +93,23 @@ NSString *strImageName;
 
 - (void)parseXMLFileAtURL
 {
+    NSString *NameValue = [[NSUserDefaults standardUserDefaults]
+                           stringForKey:@"NameValue"];
+    
+//    NSString *ImageNameValue = [[NSUserDefaults standardUserDefaults]
+//                                stringForKey:@"ApplicationNo"];
+
+    
+    
 	//NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
-     NSString *post = [NSString stringWithFormat:@"Profile_Name=%@&Column_Desc=Name|ID20No&Column_Data=%@|1",@"PPL",UserNameTxt.text];
+     NSString *post = [NSString stringWithFormat:@"intProfileID=%@",NameValue];
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 	
 	
-	[request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/ProfileSearchMobile"]];
+	[request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/LoadProfileField"]];
+    
 	
 	[request setHTTPMethod:@"POST"];
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -120,8 +127,7 @@ NSString *strImageName;
     }
     NSString *aStr = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 
-    
-    
+	
 	NSData *xmlFile;
 	xmlFile = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
 	
@@ -158,7 +164,7 @@ NSString *strImageName;
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
 	currentElement = [elementName copy];
 	ElementValue = [[NSMutableString alloc] init];
-	if ([elementName isEqualToString:@"DataProfileResult"]) {
+	if ([elementName isEqualToString:@"ProfileField"]) {
 		item = [[NSMutableDictionary alloc] init];
 	}
 }
@@ -168,39 +174,36 @@ NSString *strImageName;
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
 	
-//		NSLog(@"%d-set into Item: elementName: %@ ElementValue: %@", count, elementName, ElementValue);
+		NSLog(@"%d-set into Item: elementName: %@ ElementValue: %@", count, elementName, ElementValue);
 	
-		if ([temp isEqualToString:@"Name"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strName = ElementValue;
-		}
-		else if ([temp isEqualToString:@"IDNo"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strIDno = ElementValue;
-		}
-		else if ([temp isEqualToString:@"LicNo"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strLicNO = ElementValue;
-		}
-		else if ([temp isEqualToString:@"DocType"] && (![elementName isEqualToString:@"Col_Desc"]  && ![elementName isEqualToString:@"Col_ID"] && ![elementName isEqualToString:@"Col_Name"]) ) {
-			strDocType = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"VerID"]) {
-			strVerID = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"ProfileID"]) {
-			strProfileID = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"DocID"]) {
-			strDocID = ElementValue;
-		}
-		else if ([elementName isEqualToString:@"ImageName"]) {
-			strImageName = ElementValue;
-		}
-	
-		if ([elementName isEqualToString:@"DataProfileResult"]) {
-			NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:strName, @"Name", strIDno, @"IDNo", strLicNO, @"LicNo", strDocType, @"DocType", strVerID, @"VerID", strProfileID, @"ProfileID", strDocID, @"DocID", strImageName, @"ImageName",nil];
-			[articles addObject:[tempData copy]];
-		}
+    if ([elementName isEqualToString:@"colID"]) {
+        colID = ElementValue;
+    }
+    else if ([elementName isEqualToString:@"colName"]) {
+        colName = ElementValue;
+    }
+    
+    else if ([elementName isEqualToString:@"colDesc"]) {
+        colDesc = ElementValue;
+    }
+    
+    else if ([elementName isEqualToString:@"colDataType"]) {
+        colData = ElementValue;
+    }
+    
+    
+    if ([elementName isEqualToString:@"ProfileField"]) {
+        NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:colID, @"colID",
+                                  colName, @"colName",
+                                  colDesc, @"colDesc",
+                                  colData, @"colDataType",
+                                  nil];
+
+        [articles addObject:[tempData copy]];
+    }
+
+
 		
-		temp = ElementValue;
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
@@ -251,35 +254,16 @@ NSString *strImageName;
 			//			NSLog(@"tt: %@", imgType);
 			
 			UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
+            imgView.image = [UIImage imageNamed:@"doc.png"];
 			
-			if ([imgType isEqualToString:@"jpg"]) {
-				imgView.image = [UIImage imageNamed:@"JPEG.png"];
-			}
-			else if ([imgType isEqualToString:@"tif"]) {
-				imgView.image = [UIImage imageNamed:@"tiff-128.png"];
-			}
-			else if ([imgType isEqualToString:@"pdf"]) {
-				imgView.image = [UIImage imageNamed:@"PDF.png"];
-			}
-			else if ([imgType isEqualToString:@"gif"]) {
-				imgView.image = [UIImage imageNamed:@"gif.png"];
-			}
-			else if ([imgType isEqualToString:@"IMG"]) {
-				imgView.image = [UIImage imageNamed:@"IMG.png"];
-			}
-			else {
-				imgView.image = [UIImage imageNamed:@"doc.png"];
-			}
 			[cell.contentView addSubview:imgView];
 			
-			NSString *Name = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-			NSString *AppNo = [[articles objectAtIndex:indexPath.row ]objectForKey:@"LicNo"];
-			NSString *ID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-            NSString *DocType = [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocType"];
-			NSString *strPrint = [NSString stringWithFormat:@"%@, %@, %@",AppNo, ID,DocType];
+			NSString *profileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
+			NSString *profileName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
+			
 			
 			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, -5, 300, 45)];
-			label1.text = Name;
+			label1.text = profileName;
 			label1.tag = 2001;
 			label1.font = [UIFont systemFontOfSize:14.0];
 			label1.backgroundColor =[UIColor clearColor];
@@ -287,7 +271,7 @@ NSString *strImageName;
 			[cell.contentView addSubview:label1];
 			
 			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
-			label2.text = strPrint;
+			label2.text = profileID;
 			label2.tag = 2002;
 			label2.font = [UIFont systemFontOfSize:10.0];
 			label2.textColor = [UIColor grayColor];
@@ -362,12 +346,4 @@ NSString *strImageName;
     
 }
 
-- (IBAction)upload:(id)sender
-{
-    
-    ProfileViewController *controller = [[ProfileViewController alloc]init];
-    [self presentViewController:controller animated:YES completion:Nil];
-
-    
-}
 @end
