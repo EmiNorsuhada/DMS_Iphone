@@ -11,6 +11,7 @@
 #import "DMSViewController.h"
 #import "IndexViewController.h"
 #import "pdfView.h"
+#import "FolderViewController.h"
 
 @interface IndexViewController  ()
 
@@ -244,6 +245,13 @@ NSString *colData;
 			[self.view addSubview:textField];
 		}
 	}
+}
+
+- (IBAction)NExt:(id)sender
+{
+    FolderViewController *viewController = [[FolderViewController alloc] init];
+    [self presentViewController:viewController animated:YES completion:nil];
+    
 }
 
 

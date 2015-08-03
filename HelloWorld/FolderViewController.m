@@ -200,6 +200,18 @@ NSString *colData;
 }
 
 
+#pragma mark - `Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return [articles count];
+}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -217,55 +229,31 @@ NSString *colData;
     if (articles.count != 0) {
         if(indexPath.row < [articles count]){
             
-            NSString *imgName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"ImageName"];
-            NSArray *split = [imgName componentsSeparatedByString:@"."];
-            NSString *imgType = [split objectAtIndex:[split count] - 1];
-            
-            //			NSLog(@"tt: %@", imgType);
             
             UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
+            imgView.image = [UIImage imageNamed:@"open folder.png"];
             
-            if ([imgType isEqualToString:@"jpg"]) {
-                imgView.image = [UIImage imageNamed:@"JPEG.png"];
-            }
-            else if ([imgType isEqualToString:@"tif"]) {
-                imgView.image = [UIImage imageNamed:@"tiff-128.png"];
-            }
-            else if ([imgType isEqualToString:@"pdf"]) {
-                imgView.image = [UIImage imageNamed:@"PDF.png"];
-            }
-            else if ([imgType isEqualToString:@"gif"]) {
-                imgView.image = [UIImage imageNamed:@"gif.png"];
-            }
-            else if ([imgType isEqualToString:@"IMG"]) {
-                imgView.image = [UIImage imageNamed:@"IMG.png"];
-            }
-            else {
-                imgView.image = [UIImage imageNamed:@"doc.png"];
-            }
             [cell.contentView addSubview:imgView];
             
-            NSString *Name = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-            NSString *AppNo = [[articles objectAtIndex:indexPath.row ]objectForKey:@"LicNo"];
-            NSString *ID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-            NSString *DocType = [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocType"];
-            NSString *strPrint = [NSString stringWithFormat:@"%@, %@, %@",AppNo, ID,DocType];
+            NSString *profileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"FolderName"];
+            NSString *profileName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
             
-            UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, -5, 300, 45)];
-            label1.text = Name;
+            
+            UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, 0, 300, 45)];
+            label1.text = profileID;
             label1.tag = 2001;
-            label1.font = [UIFont systemFontOfSize:14.0];
+            label1.font = [UIFont systemFontOfSize:16.0];
             label1.backgroundColor =[UIColor clearColor];
             //			label1.numberOfLines = 2;
             [cell.contentView addSubview:label1];
             
-            UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
-            label2.text = strPrint;
-            label2.tag = 2002;
-            label2.font = [UIFont systemFontOfSize:10.0];
-            label2.textColor = [UIColor grayColor];
-            label2.backgroundColor =[UIColor clearColor];
-            [cell.contentView addSubview:label2];
+            //			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
+            //			label2.text = profileID;
+            //			label2.tag = 2002;
+            //			label2.font = [UIFont systemFontOfSize:10.0];
+            //			label2.textColor = [UIColor grayColor];
+            //			label2.backgroundColor =[UIColor clearColor];
+            //			[cell.contentView addSubview:label2];
         }
     }
     
@@ -285,39 +273,8 @@ NSString *colData;
 {
     NSLog(@"celltext %@", [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocID"]);
     
-    NSString *ProfileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"ProfileID"];
-    NSString *VerID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"VerID"];
-    NSString *post = [NSString stringWithFormat:@"VerID=%@&DocProfileID=%@&FileType=1",VerID,ProfileID];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/ViewFileMobile"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    NSData *urlData;
-    NSURLResponse *response;
-    NSError *error;
-    urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if(conn) {
-        NSLog(@"Connection Successful");
-    } else {
-        NSLog(@"Connection could not be made");
-    }
-    NSString *aStr = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
-    NSLog(@"astr %@",aStr);
-    NSArray *Separate = [aStr componentsSeparatedByString:@">"];
-    NSString *DEleteAfter = [Separate objectAtIndex:2];
-    NSArray  *LastTrim = [DEleteAfter componentsSeparatedByString:@"</string"];
-    NSString *LAstURL = [LastTrim objectAtIndex:0];
-    NSUserDefaults *pdfURL = [NSUserDefaults standardUserDefaults];
-    NSString *Url =LAstURL;
-    
-    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocType"];
-    NSString * IdNO =[[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
+    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
+    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
     
     
     [[NSUserDefaults standardUserDefaults] setObject:NameValue forKey:@"NameValue"];
@@ -326,15 +283,10 @@ NSString *colData;
     [[NSUserDefaults standardUserDefaults] setObject:ImageNameValue forKey:@"ApplicationNo"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [[NSUserDefaults standardUserDefaults] setObject:IdNO forKey:@"ID"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [pdfURL setObject:Url forKey:@"URL"];
-    pdfView *viewController = [[pdfView alloc] init];
+    IndexViewController *viewController = [[IndexViewController alloc] init];
     [self presentViewController:viewController animated:YES completion:nil];
     
 }
-
-
 
 @end
