@@ -259,7 +259,7 @@ NSString *strImageName;
 			//			NSLog(@"tt: %@", imgType);
 			
 			UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
-            imgView.image = [UIImage imageNamed:@"doc.png"];
+            imgView.image = [UIImage imageNamed:@"User.png"];
 			
 			[cell.contentView addSubview:imgView];
 			
