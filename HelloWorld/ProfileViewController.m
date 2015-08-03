@@ -267,21 +267,21 @@ NSString *strImageName;
 			NSString *profileName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
 			
 			
-			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, -5, 300, 45)];
+			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, 0, 300, 45)];
 			label1.text = profileName;
 			label1.tag = 2001;
-			label1.font = [UIFont systemFontOfSize:14.0];
+			label1.font = [UIFont systemFontOfSize:16.0];
 			label1.backgroundColor =[UIColor clearColor];
 //			label1.numberOfLines = 2;
 			[cell.contentView addSubview:label1];
 			
-			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
-			label2.text = profileID;
-			label2.tag = 2002;
-			label2.font = [UIFont systemFontOfSize:10.0];
-			label2.textColor = [UIColor grayColor];
-			label2.backgroundColor =[UIColor clearColor];
-			[cell.contentView addSubview:label2];
+//			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
+//			label2.text = profileID;
+//			label2.tag = 2002;
+//			label2.font = [UIFont systemFontOfSize:10.0];
+//			label2.textColor = [UIColor grayColor];
+//			label2.backgroundColor =[UIColor clearColor];
+//			[cell.contentView addSubview:label2];
 		}
 	}
 	

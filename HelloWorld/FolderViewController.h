@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
+@interface FolderViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
 	
 	NSXMLParser *rssParser;
 	NSMutableArray *articles;
@@ -29,6 +29,5 @@
 - (IBAction)SearchBtn:(id)sender;
 - (IBAction)TxtDidEnd:(id)sender;
 - (void)parseXMLFileAtURL:(NSString *)URL;
-- (IBAction)NExt:(id)sender;
 
 @end
