@@ -26,6 +26,9 @@ NSString *colID;
 NSString *colName;
 NSString *colDesc;
 NSString *colData;
+NSString *Compulsory;
+NSString *DataLength;
+bool proceed;
 
 
 
@@ -84,6 +87,18 @@ NSString *colData;
 	[UserNameTxt resignFirstResponder];
 	
 	return NO;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	
+	if(range.length + range.location > textField.text.length)
+	{
+		return NO;
+	}
+	
+	NSUInteger newLength = [textField.text length] + [string length] - range.length;
+	int totLen = [[[articles objectAtIndex:textField.tag -1 ] objectForKey:@"DataLength"] intValue];
+	return newLength <= totLen;
 }
 
 #pragma mark - XMLParser
@@ -187,13 +202,22 @@ NSString *colData;
     else if ([elementName isEqualToString:@"colDataType"]) {
         colData = ElementValue;
     }
-    
-    
+	else if ([elementName isEqualToString:@"Compulsory"]) {
+		Compulsory = ElementValue;
+	}
+	
+	else if ([elementName isEqualToString:@"DataLength"]) {
+		DataLength = ElementValue;
+	}
+	
+	
     if ([elementName isEqualToString:@"ProfileField"]) {
         NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:colID, @"colID",
                                   colName, @"colName",
                                   colDesc, @"colDesc",
                                   colData, @"colDataType",
+								  Compulsory, @"Compulsory",
+								  DataLength, @"DataLength",
                                   nil];
 
         [articles addObject:[tempData copy]];
@@ -204,7 +228,7 @@ NSString *colData;
 	
 	if (errorParsing == NO)
 	{
-		NSLog(@"%@", articles);
+//		NSLog(@"%@", articles);
 		[self generateLabel];
 		temp = @"";
 		NSLog(@"XML processing done!");
@@ -223,19 +247,15 @@ NSString *colData;
 		for (int m = 0; m < articles.count; m = m + 1) {
 			
 			labelName = [[articles objectAtIndex:m] objectForKey:@"colDesc"];
-			NSLog(@"label name: %@",labelName);
+//			NSLog(@"label name: %@",labelName);
 			
 			addY = addY + 30;
-//			UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(20, 110+addY, 300, 45)];
-//			label1.text = labelName;
-//			label1.font = [UIFont systemFontOfSize:14.0];
-//			label1.backgroundColor =[UIColor clearColor];
-//			[self.view addSubview:label1];
 			
 			UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 110+addY, 280, 25)];
 			textField.borderStyle = UITextBorderStyleRoundedRect;
 			textField.font = [UIFont systemFontOfSize:15];
 			textField.placeholder = labelName;
+			textField.tag = m+1;
 			textField.autocorrectionType = UITextAutocorrectionTypeNo;
 			textField.keyboardType = UIKeyboardTypeDefault;
 			textField.returnKeyType = UIReturnKeyDone;
@@ -249,9 +269,40 @@ NSString *colData;
 
 - (IBAction)NExt:(id)sender
 {
-    FolderViewController *viewController = [[FolderViewController alloc] init];
-    [self presentViewController:viewController animated:YES completion:nil];
-    
+	proceed = YES;
+	NSString *combineStr = @"";
+	if (articles.count != 0) {
+		for (int m = 0; m < articles.count; m = m + 1) {
+			NSString *text = [(UITextField *)[self.view viewWithTag:m+1] text];
+			NSString *labelName = [[articles objectAtIndex:m] objectForKey:@"colDesc"];
+			Compulsory = [[articles objectAtIndex:m] objectForKey:@"Compulsory"];
+			if ([combineStr isEqualToString:@""]) {
+				combineStr = text;
+			}
+			else {
+				combineStr = [NSString stringWithFormat:@"%@|%@", combineStr, text];
+			}
+			
+			if ([Compulsory isEqualToString:@"true"] && text.length <=0) {
+				proceed = NO;
+				NSString *AlertMsg = [NSString stringWithFormat:@"%@ is compulsory",labelName];
+				UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+																message:AlertMsg
+															   delegate:self
+													  cancelButtonTitle:@"OK"
+													  otherButtonTitles:nil];
+				[alert show];
+				[[self.view viewWithTag:m+1] becomeFirstResponder];
+			}
+		}
+	}
+	
+	if (proceed) {
+		NSLog(@"CB: %@", combineStr);
+		FolderViewController *viewController = [[FolderViewController alloc] init];
+		[self presentViewController:viewController animated:YES completion:nil];
+	}
+	
 }
 
 

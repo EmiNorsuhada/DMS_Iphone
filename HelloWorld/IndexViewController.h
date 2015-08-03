@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
+@interface IndexViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>{
 	
 	NSXMLParser *rssParser;
 	NSMutableArray *articles;
