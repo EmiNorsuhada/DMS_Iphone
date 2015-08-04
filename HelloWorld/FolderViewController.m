@@ -97,7 +97,7 @@ NSString *folderDir;
 		
 		if (PathHist.count == 1) {
 //			button.userInteractionEnabled = false;
-			[button setTitle:@"Choose the location1" forState:UIControlStateNormal];
+			[button setTitle:@"Choose the location" forState:UIControlStateNormal];
 		}
 		else if (PathHist.count != 0) {
 			
@@ -235,7 +235,13 @@ NSString *folderDir;
 		
 		NSString *fname = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderName"];
 		UIButton *btn = (UIButton*)[self.view viewWithTag:1001];
-		[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
+		if (PathHist.count == 2) {
+			[btn setTitle:@"Choose the location" forState:UIControlStateNormal];
+		}
+		else {
+			[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
+		}
+		
 		[PathHist removeLastObject];
 		
 		[articles addObjectsFromArray:PrevArticles];
