@@ -11,6 +11,8 @@
 		6A02B2781B69CA7E00A524A9 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A02B2761B69CA7E00A524A9 /* ProfileViewController.xib */; };
 		6A02B27C1B6A05E000A524A9 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02B27A1B6A05E000A524A9 /* IndexViewController.m */; };
 		6A02B27D1B6A05E000A524A9 /* IndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A02B27B1B6A05E000A524A9 /* IndexViewController.xib */; };
+		6A03FB231B709E2D002696B7 /* folder_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A03FB211B709E2D002696B7 /* folder_add.png */; };
+		6A03FB241B709E2D002696B7 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A03FB221B709E2D002696B7 /* photo1.png */; };
 		6A113CFF1B6F1F790069DE55 /* open folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A113CFE1B6F1F790069DE55 /* open folder.png */; };
 		6A16300C1B673FB200EDE07F /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A16300B1B673FB200EDE07F /* close.png */; };
 		6A1B401A1B6F257C00FEEFEC /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1B40191B6F257C00FEEFEC /* User.png */; };
@@ -80,6 +82,8 @@
 		6A02B2791B6A05E000A524A9 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		6A02B27A1B6A05E000A524A9 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 		6A02B27B1B6A05E000A524A9 /* IndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexViewController.xib; sourceTree = "<group>"; };
+		6A03FB211B709E2D002696B7 /* folder_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_add.png; sourceTree = "<group>"; };
+		6A03FB221B709E2D002696B7 /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
 		6A113CFE1B6F1F790069DE55 /* open folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open folder.png"; sourceTree = "<group>"; };
 		6A16300B1B673FB200EDE07F /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		6A1B40191B6F257C00FEEFEC /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 		C38476F31B42504D00063D90 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6A03FB211B709E2D002696B7 /* folder_add.png */,
+				6A03FB221B709E2D002696B7 /* photo1.png */,
 				6A16300B1B673FB200EDE07F /* close.png */,
 				C39D16901B672D8800A90D38 /* ai.png */,
 				C39D16911B672D8800A90D38 /* doc.png */,
@@ -375,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A16300C1B673FB200EDE07F /* close.png in Resources */,
+				6A03FB231B709E2D002696B7 /* folder_add.png in Resources */,
 				C39D169C1B672D8800A90D38 /* IMG.png in Resources */,
 				C39D169B1B672D8800A90D38 /* gif.png in Resources */,
 				C39D16991B672D8800A90D38 /* doc.png in Resources */,
@@ -395,6 +402,7 @@
 				6ABAFD631B54D9EC000EB3AF /* BAckground.png in Resources */,
 				6AF4EBEC1B6F4B7400EF2999 /* MMX DIGITAL CAMERA.png in Resources */,
 				C39D169E1B672D8800A90D38 /* PDF.png in Resources */,
+				6A03FB241B709E2D002696B7 /* photo1.png in Resources */,
 				C39D16981B672D8800A90D38 /* ai.png in Resources */,
 				C3977D491B672BE000EA5B33 /* tiff-128.png in Resources */,
 				C38476ED1B424CF000063D90 /* ModuleViewController.xib in Resources */,

@@ -43,6 +43,11 @@
     
 }
 
+- (IBAction)Upload:(id)sender
+{
+     [self parseXMLFileAtURL];
+}
+
 - (IBAction)takePhoto:(UIButton *)sender {
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -73,19 +78,20 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
     
-    CGDataProviderRef provider = CGImageGetDataProvider(chosenImage.CGImage);
-    NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
-    const uint8_t* bytes = [data bytes];
+    NSData* data = UIImageJPEGRepresentation(chosenImage, 0.3f);
+    encoded = [Base64 encode:data];
+    
+//    CGDataProviderRef provider = CGImageGetDataProvider(chosenImage.CGImage);
+//    NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
+//    
+//    const uint8_t* bytes = [data bytes];
+//    data= UIImageJPEGRepresentation(chosenImage,1.0);
     
    
     
  //   NSData *imageData = UIImageJPEGRepresentation(self.imgHeaderPhoto.image, 0.1);
     
-    encoded = [Base64 encode:data];
-    
-    [self parseXMLFileAtURL];
-    
-    
+  //  encoded = [Base64 encode:data];
     
    // NSLog(@"bytes %s",bytes);
     
@@ -99,7 +105,8 @@
     
     //NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
     NSString *post = [NSString stringWithFormat:
-                      @"FileContent=%@&strFileName=%@&strProfile=%@&strFolderName=%@&ProfileValue=%@&userID=%@",@"",@"",@"",@"",@"",@""];
+                      @"FileContent=%@&strFileName=%@&strProfile=%@&strFolderName=%@&ProfileValue=%@&userID=%@",encoded,@"Image.png",@"PPL",
+                      @"Microlink>Banking>Fix Deposit",@"prem|prem1|prem2",@"admin"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

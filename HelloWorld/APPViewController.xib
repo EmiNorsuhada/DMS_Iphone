@@ -42,9 +42,9 @@
                     <size key="shadowOffset" width="0.0" height="-2"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="26">
-                    <rect key="frame" x="208" y="68" width="67" height="56"/>
+                    <rect key="frame" x="218" y="75" width="67" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Select Photo" image="MMX DIGITAL CAMERA - PICTURES.png">
+                    <state key="normal" title="Select Photo" image="folder_add.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -52,12 +52,15 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L8s-Yw-OXw">
-                    <rect key="frame" x="120" y="498" width="76" height="50"/>
+                    <rect key="frame" x="99" y="489" width="107" height="71"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Upload">
                         <color key="titleColor" red="0.14558420941593364" green="1" blue="0.17113395263696485" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="Upload:" destination="-1" eventType="touchUpInside" id="7Ls-al-0K0"/>
+                    </connections>
                 </button>
                 <navigationBar contentMode="scaleToFill" id="68">
                     <rect key="frame" x="0.0" y="19" width="320" height="44"/>
@@ -72,16 +75,6 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="22">
-                    <rect key="frame" x="29" y="52" width="87" height="72"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Take Photo" image="MMX DIGITAL CAMERA.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="44"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6b5-km-KZ7">
                     <rect key="frame" x="34" y="124" width="88" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,16 +89,26 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="22">
+                    <rect key="frame" x="38" y="69" width="68" height="57"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Take Photo" image="photo1.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="44"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>
     </objects>
     <resources>
-        <image name="MMX DIGITAL CAMERA - PICTURES.png" width="128" height="128"/>
-        <image name="MMX DIGITAL CAMERA.png" width="128" height="128"/>
         <image name="Upload.png" width="638" height="452"/>
         <image name="background1.png" width="1200" height="1920"/>
         <image name="close.png" width="29" height="29"/>
+        <image name="folder_add.png" width="225" height="225"/>
+        <image name="photo1.png" width="204" height="204"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
