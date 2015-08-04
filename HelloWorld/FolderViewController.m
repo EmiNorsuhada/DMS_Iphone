@@ -11,6 +11,7 @@
 #import "DMSViewController.h"
 #import "IndexViewController.h"
 #import "FolderViewController.h"
+#import "APPViewController.h"
 #import "pdfView.h"
 
 @interface FolderViewController  ()
@@ -18,14 +19,14 @@
 @end
 
 @implementation FolderViewController
-@synthesize UserNameTxt,ProfileNameTxt;
+@synthesize UserNameTxt,ProfileNameTxt, BackFolder;
 
-NSString *temp;
 int count;
-NSString *colID;
-NSString *colName;
+NSString *FolderID;
+NSString *FolderName;
 NSString *colDesc;
 NSString *colData;
+NSString *folderDir;
 
 
 
@@ -41,14 +42,28 @@ NSString *colData;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
 	[self.SearchTableView sizeToFit];
-    [self parseXMLFileAtURL];
+	[self parseXMLFileAtURL:@"1"];
+	folderDir = @"";
 	count = 0;
-	temp = @"";
 	
 	UserNameTxt.text = @"Jacob*";
+	PathHist = [[NSMutableArray alloc] init];
+	NSDictionary *tempD = [[NSDictionary alloc] initWithObjectsAndKeys:@"", @"FolderName",
+							  @"1", @"FolderID",
+							  nil];
+	[PathHist addObject:[tempD copy]];
 	
-    // Do any additional setup after loading the view from its nib.
+
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[button addTarget:self
+			   action:@selector(backFolder:)
+	 forControlEvents:UIControlEventTouchUpInside];
+	[button setTitle:@"Choose the location" forState:UIControlStateNormal];
+	button.tag = 1001;
+	button.frame = CGRectMake(16, 78, 280, 40);
+	[self.view addSubview:button];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,29 +81,57 @@ NSString *colData;
 - (IBAction)SearchBtn:(id)sender
 {
 	
-	[self parseXMLFileAtURL];
+	[self parseXMLFileAtURL:@"1"];
 	[self.SearchTableView reloadData];
 	
 	[UserNameTxt resignFirstResponder];
 }
 
-- (IBAction)TxtDidEnd:(id)sender {
 
+- (void)backFolder:(UIButton*)button
+{
+	
+	NSLog(@"button click");
+	if (button.tag == 1001) {
+//		button.userInteractionEnabled = true;
+		
+		if (PathHist.count == 1) {
+//			button.userInteractionEnabled = false;
+			[button setTitle:@"Choose the location1" forState:UIControlStateNormal];
+		}
+		else if (PathHist.count != 0) {
+			
+			NSLog(@"count: %d",PathHist.count);
+			NSString *fID = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderID"];
+			NSString *fname = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderName"];
+			
+			if ([fname isEqualToString:@""]) {
+//				button.userInteractionEnabled = false;
+				[button setTitle:@"Choose the location" forState:UIControlStateNormal];
+			}
+			else {
+//				button.userInteractionEnabled = true;
+				NSString *t = [NSString stringWithFormat:@"<  %@", fname];
+				[button setTitle:t forState:UIControlStateNormal];
+			}
+			
+			NSLog(@"%@", PathHist);
+			[PathHist removeLastObject];
+			NSLog(@"%@", PathHist);
+			[articles removeAllObjects];
+			[self parseXMLFileAtURL:fID];
+			NSLog(@"%@", BackFolder.titleLabel.text);
+			[self.SearchTableView reloadData];
+		}
+		
+		
+	}
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	
-	[self parseXMLFileAtURL];
-	[self.SearchTableView reloadData];
-	
-	[UserNameTxt resignFirstResponder];
-	
-	return NO;
-}
 
 #pragma mark - XMLParser
 
-- (void)parseXMLFileAtURL
+- (void)parseXMLFileAtURL:(NSString *)FolderID
 {
     NSString *Username = [[NSUserDefaults standardUserDefaults]
                            stringForKey:@"Username"];
@@ -96,7 +139,7 @@ NSString *colData;
     NSString *Password = [[NSUserDefaults standardUserDefaults]
                            stringForKey:@"Password"];
 
-    NSString *post = [NSString stringWithFormat:@"UserId=%@&ParentId=%@",@"3",@"1"];
+    NSString *post = [NSString stringWithFormat:@"UserId=%@&ParentId=%@",@"3",FolderID];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -143,6 +186,8 @@ NSString *colData;
 	
 }
 
+
+
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
 	
 	NSString *errorString = [NSString stringWithFormat:@"Error code %i", [parseError code]];
@@ -173,17 +218,31 @@ NSString *colData;
 		NSLog(@"%d-set into Item: elementName: %@ ElementValue: %@", count, elementName, ElementValue);
 	
     if ([elementName isEqualToString:@"FolderName"]) {
-        colID = ElementValue;
+        FolderName = ElementValue;
     }
-    
-    
-    if ([elementName isEqualToString:@"FolderInfo"]) {
-        NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:colID, @"FolderName",
-
+	else if ([elementName isEqualToString:@"FolderId"]) {
+		FolderID = ElementValue;
+	}
+	
+	
+	if ([elementName isEqualToString:@"FolderInfo"] && ![FolderID isEqualToString:@"0"]) {
+        NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:FolderName, @"FolderName",
+								  FolderID, @"FolderID",
                                   nil];
-
         [articles addObject:[tempData copy]];
     }
+	else if ([elementName isEqualToString:@"FolderInfo"] && [FolderID isEqualToString:@"0"]){
+		
+		NSString *fname = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderName"];
+		UIButton *btn = (UIButton*)[self.view viewWithTag:1001];
+		[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
+		[PathHist removeLastObject];
+		
+		[articles addObjectsFromArray:PrevArticles];
+		
+		APPViewController *viewController = [[APPViewController alloc] init];
+		[self presentViewController:viewController animated:YES completion:nil];
+	}
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
@@ -192,7 +251,6 @@ NSString *colData;
 	{
 		NSLog(@"%@", articles);
 		//[self generateLabel];
-		temp = @"";
 		NSLog(@"XML processing done!");
 	} else {
 		NSLog(@"Error occurred during XML processing");
@@ -235,25 +293,15 @@ NSString *colData;
             
             [cell.contentView addSubview:imgView];
             
-            NSString *profileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"FolderName"];
-            NSString *profileName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
-            
-            
+            NSString *fName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"FolderName"];
+			
             UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(50, 0, 300, 45)];
-            label1.text = profileID;
+            label1.text = fName;
             label1.tag = 2001;
             label1.font = [UIFont systemFontOfSize:16.0];
             label1.backgroundColor =[UIColor clearColor];
-            //			label1.numberOfLines = 2;
             [cell.contentView addSubview:label1];
-            
-            //			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
-            //			label2.text = profileID;
-            //			label2.tag = 2002;
-            //			label2.font = [UIFont systemFontOfSize:10.0];
-            //			label2.textColor = [UIColor grayColor];
-            //			label2.backgroundColor =[UIColor clearColor];
-            //			[cell.contentView addSubview:label2];
+			
         }
     }
     
@@ -271,22 +319,31 @@ NSString *colData;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"celltext %@", [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocID"]);
-    
-    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
-    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
-    
-    
-    [[NSUserDefaults standardUserDefaults] setObject:NameValue forKey:@"NameValue"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:ImageNameValue forKey:@"ApplicationNo"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    
-    IndexViewController *viewController = [[IndexViewController alloc] init];
-    [self presentViewController:viewController animated:YES completion:nil];
-    
+
+    NSString *fID = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderID"];
+	NSString *fname = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderName"];
+	
+	UIButton *btn = (UIButton*)[self.view viewWithTag:1001];
+	[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
+	
+	NSDictionary *tempD = [[NSDictionary alloc] initWithObjectsAndKeys:fname, @"FolderName",
+							  fID, @"FolderID",
+							  nil];
+	[PathHist addObject:[tempD copy]];
+	
+	PrevArticles = [[NSMutableArray alloc] init];
+	[PrevArticles removeAllObjects];
+	[PrevArticles addObjectsFromArray:articles];
+	
+	[articles removeAllObjects];
+	[self parseXMLFileAtURL:fID];
+	
+	
+	[tableView beginUpdates];
+	[tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+			 withRowAnimation:UITableViewRowAnimationFade];
+	[self.SearchTableView reloadData];
+	[tableView endUpdates];
 }
 
 @end

@@ -12,6 +12,8 @@
 	
 	NSXMLParser *rssParser;
 	NSMutableArray *articles;
+	NSMutableArray *PrevArticles;
+	NSMutableArray *PathHist;
 	NSMutableDictionary *item;
 	NSString *currentElement;
 	NSMutableString *ElementValue;
@@ -23,11 +25,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *UserNameTxt;
 @property (weak, nonatomic) IBOutlet UITableView *SearchTableView;
 @property (strong, nonatomic) IBOutlet UILabel *Type;
+@property (nonatomic,retain) IBOutlet UIButton *BackFolder;
 
 
 - (IBAction)BackBtn:(id)sender;
 - (IBAction)SearchBtn:(id)sender;
 - (IBAction)TxtDidEnd:(id)sender;
-- (void)parseXMLFileAtURL:(NSString *)URL;
+- (void)parseXMLFileAtURL:(NSString *)FolderID;
+- (IBAction)BackFolderClick:(id)sender;
+
 
 @end
