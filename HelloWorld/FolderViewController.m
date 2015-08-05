@@ -91,7 +91,7 @@ NSString *folderDir;
 - (void)backFolder:(UIButton*)button
 {
 	
-	NSLog(@"button click");
+//	NSLog(@"button click");
 	if (button.tag == 1001) {
 //		button.userInteractionEnabled = true;
 		
@@ -242,10 +242,24 @@ NSString *folderDir;
 			[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
 		}
 		
+		NSString *FolderPath = @"";
+		if (PathHist != 0) {
+			for (int a = 0; a < PathHist.count; a = a + 1) {
+				NSString *tempPath = [[PathHist objectAtIndex:a]objectForKey:@"FolderName"];
+				if ([FolderPath isEqualToString:@""]) {
+					FolderPath = tempPath;
+				}
+				else {
+					FolderPath = [NSString stringWithFormat:@"%@>%@", FolderPath, tempPath];
+				}
+			}
+		}
+	
+		NSLog(@"Folder Path: %@", FolderPath);
+		
+		
 		[PathHist removeLastObject];
-		
 		[articles addObjectsFromArray:PrevArticles];
-		
 		APPViewController *viewController = [[APPViewController alloc] init];
 		[self presentViewController:viewController animated:YES completion:nil];
 	}
