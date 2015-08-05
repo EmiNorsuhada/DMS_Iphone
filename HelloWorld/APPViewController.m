@@ -101,12 +101,22 @@
 
 - (void)parseXMLFileAtURL
 {
-      NSLog(@"encoded%@",encoded);
+    
+    
+    NSString *FolderPath = [[NSUserDefaults standardUserDefaults]
+                           stringForKey:@"FolderPath"];
+    
+    NSString *combineStrIndex = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"combineStrIndex"];
+    
+    
+    
+    NSLog(@"encoded%@",FolderPath);
     
     //NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
     NSString *post = [NSString stringWithFormat:
                       @"FileContent=%@&strFileName=%@&strProfile=%@&strFolderName=%@&ProfileValue=%@&userID=%@",encoded,@"Image.png",@"PPL",
-                      @"Microlink>Banking>Fix Deposit",@"prem|prem1|prem2",@"admin"];
+                      FolderPath,combineStrIndex,@"admin"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

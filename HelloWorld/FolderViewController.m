@@ -256,8 +256,10 @@ NSString *folderDir;
 		}
 	
 		NSLog(@"Folder Path: %@", FolderPath);
-		
-		
+        
+        [[NSUserDefaults standardUserDefaults] setObject:FolderPath forKey:@"FolderPath"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
 		[PathHist removeLastObject];
 		[articles addObjectsFromArray:PrevArticles];
 		APPViewController *viewController = [[APPViewController alloc] init];
@@ -357,8 +359,8 @@ NSString *folderDir;
 	
 	[articles removeAllObjects];
 	[self parseXMLFileAtURL:fID];
-	
-	
+    
+   
 	[tableView beginUpdates];
 	[tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
 			 withRowAnimation:UITableViewRowAnimationFade];
