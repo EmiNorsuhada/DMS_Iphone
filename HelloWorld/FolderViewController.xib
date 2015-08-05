@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                     <items>
                         <navigationItem title="Document Import" id="n4x-3D-sbb">
-                            <barButtonItem key="leftBarButtonItem" image="close.png" style="done" id="xbu-1m-6x1">
+                            <barButtonItem key="leftBarButtonItem" image="back1.png" style="done" id="xbu-1m-6x1">
                                 <connections>
                                     <action selector="BackBtn:" destination="-1" id="19N-Bd-brm"/>
                                 </connections>
@@ -41,7 +41,7 @@
                     <size key="shadowOffset" width="0.0" height="-2"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Yls-XP-ch2">
-                    <rect key="frame" x="8" y="124" width="320" height="436"/>
+                    <rect key="frame" x="1" y="126" width="320" height="436"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Wg7-mj-7kd"/>
@@ -54,8 +54,8 @@
         </view>
     </objects>
     <resources>
+        <image name="back1.png" width="25" height="25"/>
         <image name="background1.png" width="1200" height="1920"/>
-        <image name="close.png" width="29" height="29"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

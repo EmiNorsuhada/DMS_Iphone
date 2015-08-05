@@ -38,6 +38,10 @@
 		C3778C911B71AD96007F452C /* Jpg1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778C891B71AD96007F452C /* Jpg1.png */; };
 		C3778C921B71AD96007F452C /* PDF1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778C8A1B71AD96007F452C /* PDF1.png */; };
 		C3778C931B71AD96007F452C /* Tiff1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778C8B1B71AD96007F452C /* Tiff1.png */; };
+		C3778CAA1B71B88E007F452C /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CA81B71B88E007F452C /* back1.png */; };
+		C3778CAB1B71B88E007F452C /* upload1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CA91B71B88E007F452C /* upload1.png */; };
+		C3778CAE1B71B992007F452C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CAC1B71B992007F452C /* back.png */; };
+		C3778CAF1B71B992007F452C /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CAD1B71B992007F452C /* next.png */; };
 		C38476E71B4245D700063D90 /* DMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38476E51B4245D700063D90 /* DMSViewController.m */; };
 		C38476E81B4245D700063D90 /* DMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38476E61B4245D700063D90 /* DMSViewController.xib */; };
 		C38476EC1B424CF000063D90 /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38476EA1B424CF000063D90 /* ModuleViewController.m */; };
@@ -121,6 +125,10 @@
 		C3778C891B71AD96007F452C /* Jpg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jpg1.png; sourceTree = "<group>"; };
 		C3778C8A1B71AD96007F452C /* PDF1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDF1.png; sourceTree = "<group>"; };
 		C3778C8B1B71AD96007F452C /* Tiff1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tiff1.png; sourceTree = "<group>"; };
+		C3778CA81B71B88E007F452C /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
+		C3778CA91B71B88E007F452C /* upload1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload1.png; sourceTree = "<group>"; };
+		C3778CAC1B71B992007F452C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		C3778CAD1B71B992007F452C /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		C38476E41B4245D700063D90 /* DMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSViewController.h; sourceTree = "<group>"; };
 		C38476E51B4245D700063D90 /* DMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSViewController.m; sourceTree = "<group>"; };
 		C38476E61B4245D700063D90 /* DMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMSViewController.xib; sourceTree = "<group>"; };
@@ -190,8 +198,12 @@
 		C38476F31B42504D00063D90 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C3778CAC1B71B992007F452C /* back.png */,
+				C3778CAD1B71B992007F452C /* next.png */,
 				C3778C841B71AD96007F452C /* camera.png */,
 				C3778C851B71AD96007F452C /* doc1.png */,
+				C3778CA81B71B88E007F452C /* back1.png */,
+				C3778CA91B71B88E007F452C /* upload1.png */,
 				C3778C861B71AD96007F452C /* Gif1.png */,
 				C3778C871B71AD96007F452C /* IMG1.png */,
 				C3778C881B71AD96007F452C /* IMG2.png */,
@@ -404,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3778CAF1B71B992007F452C /* next.png in Resources */,
 				6A16300C1B673FB200EDE07F /* close.png in Resources */,
 				6A03FB231B709E2D002696B7 /* folder_add.png in Resources */,
 				C3778C8E1B71AD96007F452C /* Gif1.png in Resources */,
@@ -415,6 +428,7 @@
 				6ABAFD611B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg in Resources */,
 				6A1B401F1B6F2A8800FEEFEC /* APPViewController.xib in Resources */,
 				C3778C911B71AD96007F452C /* Jpg1.png in Resources */,
+				C3778CAA1B71B88E007F452C /* back1.png in Resources */,
 				6A113CFF1B6F1F790069DE55 /* open folder.png in Resources */,
 				C39D169A1B672D8800A90D38 /* file-xml.png in Resources */,
 				6A02B27D1B6A05E000A524A9 /* IndexViewController.xib in Resources */,
@@ -438,6 +452,7 @@
 				C39D16981B672D8800A90D38 /* ai.png in Resources */,
 				C3977D491B672BE000EA5B33 /* tiff-128.png in Resources */,
 				C38476ED1B424CF000063D90 /* ModuleViewController.xib in Resources */,
+				C3778CAB1B71B88E007F452C /* upload1.png in Resources */,
 				C39D169F1B672D8800A90D38 /* tif.png in Resources */,
 				C373F2321B65CF980018639D /* background1.png in Resources */,
 				6ABAFD5F1B54C070000EB3AF /* abstract_business_background_311474.jpg in Resources */,
@@ -446,6 +461,7 @@
 				6AFC2D981B6B2E9F00C0861F /* FolderViewController.xib in Resources */,
 				C38476FD1B42532400063D90 /* Download_Files_4_You_Logo.png in Resources */,
 				C38476FB1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png in Resources */,
+				C3778CAE1B71B992007F452C /* back.png in Resources */,
 				6AF4EBEE1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png in Resources */,
 				C38477011B42576F00063D90 /* small-button-md.png in Resources */,
 				6A1B401A1B6F257C00FEEFEC /* User.png in Resources */,
