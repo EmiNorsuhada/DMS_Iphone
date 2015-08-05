@@ -49,7 +49,17 @@ bool proceed;
 	count = 0;
 	temp = @"";
 	
-	UserNameTxt.text = @"Jacob*";
+//	UserNameTxt.text = @"Jacob*";
+	
+	
+	NSString *pName = [[NSUserDefaults standardUserDefaults] stringForKey:@"profileName"];
+	
+	UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(25, 75, 300, 50)];
+	label1.text = pName;
+	label1.tag = 111;
+	label1.font = [UIFont boldSystemFontOfSize:17.0];
+	label1.backgroundColor =[UIColor clearColor];
+	[self.view addSubview:label1];
 	
     // Do any additional setup after loading the view from its nib.
 }

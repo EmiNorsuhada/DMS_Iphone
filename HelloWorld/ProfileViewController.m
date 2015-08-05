@@ -77,51 +77,15 @@ NSString *strImageName;
 
 - (IBAction)TxtDidEnd:(id)sender {
 	
-//	[self parseXMLFileAtURL];
-//	[self.SearchTableView reloadData];
-//	
-//	[UserNameTxt resignFirstResponder];
 }
 
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//	
-//	[self parseXMLFileAtURL];
-//	[self.SearchTableView reloadData];
-//	
-//	[UserNameTxt resignFirstResponder];
-//	
-//	return NO;
-//}
+
 
 #pragma mark - XMLParser
 
 - (void)parseXMLFileAtURL
 {
-//    NSString *post = [NSString stringWithFormat:@"profileID=%@&profileName=%@",@"",@""];
-//    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-//    NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//    
-//    NSString *url = [NSString stringWithFormat:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/LoadProfiles"];
-//    [request setURL:[NSURL URLWithString:url]];
-//    [request setHTTPMethod:@"POST"];
-//    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request setHTTPBody:postData];
-//    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-//    NSData *urlData;
-//    NSURLResponse *response;
-//    NSError *error;
-//    urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-//    if(conn) {
-//        NSLog(@"Connection Successful");
-//    } else {
-//        NSLog(@"Connection could not be made");
-//    }
-//    NSString *aStr = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 
-    
-    
 	//NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
      NSString *post = [NSString stringWithFormat:@"profileID=%@&profileName=%@",@"",@""];
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -273,16 +237,8 @@ NSString *strImageName;
 			label1.tag = 2001;
 			label1.font = [UIFont systemFontOfSize:16.0];
 			label1.backgroundColor =[UIColor clearColor];
-//			label1.numberOfLines = 2;
 			[cell.contentView addSubview:label1];
 			
-//			UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(50,7, 300, 45)];
-//			label2.text = profileID;
-//			label2.tag = 2002;
-//			label2.font = [UIFont systemFontOfSize:10.0];
-//			label2.textColor = [UIColor grayColor];
-//			label2.backgroundColor =[UIColor clearColor];
-//			[cell.contentView addSubview:label2];
 		}
 	}
 	
@@ -302,14 +258,14 @@ NSString *strImageName;
 {
      NSLog(@"celltext %@", [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocID"]);
     
-    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
-    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
+    NSString *profileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
+    NSString *profileName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
    
 
-    [[NSUserDefaults standardUserDefaults] setObject:NameValue forKey:@"NameValue"];
+    [[NSUserDefaults standardUserDefaults] setObject:profileID forKey:@"profileID"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [[NSUserDefaults standardUserDefaults] setObject:ImageNameValue forKey:@"ApplicationNo"];
+    [[NSUserDefaults standardUserDefaults] setObject:profileName forKey:@"profileName"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     
