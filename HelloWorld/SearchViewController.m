@@ -253,22 +253,22 @@ NSString *strImageName;
 			UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
 			
 			if ([imgType isEqualToString:@"jpg"]) {
-				imgView.image = [UIImage imageNamed:@"JPEG.png"];
+				imgView.image = [UIImage imageNamed:@"Jpg1.png"];
 			}
 			else if ([imgType isEqualToString:@"tif"]) {
-				imgView.image = [UIImage imageNamed:@"tiff-128.png"];
+            imgView.image = [UIImage imageNamed:@"Tiff1.png"];
 			}
 			else if ([imgType isEqualToString:@"pdf"]) {
-				imgView.image = [UIImage imageNamed:@"PDF.png"];
+				imgView.image = [UIImage imageNamed:@"PDF1.png"];
 			}
 			else if ([imgType isEqualToString:@"gif"]) {
-				imgView.image = [UIImage imageNamed:@"gif.png"];
+				imgView.image = [UIImage imageNamed:@"Gif1.png"];
 			}
 			else if ([imgType isEqualToString:@"IMG"]) {
-				imgView.image = [UIImage imageNamed:@"IMG.png"];
+				imgView.image = [UIImage imageNamed:@"IMG2.png"];
 			}
 			else {
-				imgView.image = [UIImage imageNamed:@"doc.png"];
+				imgView.image = [UIImage imageNamed:@"doc1.png"];
 			}
 			[cell.contentView addSubview:imgView];
 			
