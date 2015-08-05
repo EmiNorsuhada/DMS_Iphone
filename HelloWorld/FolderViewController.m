@@ -19,7 +19,7 @@
 @end
 
 @implementation FolderViewController
-@synthesize UserNameTxt,ProfileNameTxt, BackFolder;
+@synthesize UserNameTxt,ProfileNameTxt;
 
 int count;
 NSString *FolderID;
@@ -101,7 +101,6 @@ NSString *folderDir;
 		}
 		else if (PathHist.count != 0) {
 			
-			NSLog(@"count: %d",PathHist.count);
 			NSString *fID = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderID"];
 			NSString *fname = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderName"];
 			
@@ -114,13 +113,11 @@ NSString *folderDir;
 				NSString *t = [NSString stringWithFormat:@"<  %@", fname];
 				[button setTitle:t forState:UIControlStateNormal];
 			}
+
 			
-			NSLog(@"%@", PathHist);
 			[PathHist removeLastObject];
-			NSLog(@"%@", PathHist);
 			[articles removeAllObjects];
 			[self parseXMLFileAtURL:fID];
-			NSLog(@"%@", BackFolder.titleLabel.text);
 			[self.SearchTableView reloadData];
 		}
 		

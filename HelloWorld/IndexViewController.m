@@ -81,10 +81,7 @@ bool proceed;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	
-	[self parseXMLFileAtURL];
-	[self.SearchTableView reloadData];
-	
-	[UserNameTxt resignFirstResponder];
+	[textField resignFirstResponder];
 	
 	return NO;
 }

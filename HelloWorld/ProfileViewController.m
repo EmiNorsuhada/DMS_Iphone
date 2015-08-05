@@ -11,6 +11,7 @@
 #import "DMSViewController.h"
 #import "pdfView.h"
 #import "IndexViewController.h"
+#import "SearchViewController.h"
 
 @interface ProfileViewController ()
 
@@ -61,7 +62,7 @@ NSString *strImageName;
 
 - (IBAction)BackBtn:(id)sender {
 	
-	DMSViewController *controller = [[DMSViewController alloc]init];
+	SearchViewController *controller = [[SearchViewController alloc]init];
 	[self presentViewController:controller animated:YES completion:Nil];
 }
 
@@ -82,15 +83,15 @@ NSString *strImageName;
 //	[UserNameTxt resignFirstResponder];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	
-	[self parseXMLFileAtURL];
-	[self.SearchTableView reloadData];
-	
-	[UserNameTxt resignFirstResponder];
-	
-	return NO;
-}
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+//	
+//	[self parseXMLFileAtURL];
+//	[self.SearchTableView reloadData];
+//	
+//	[UserNameTxt resignFirstResponder];
+//	
+//	return NO;
+//}
 
 #pragma mark - XMLParser
 

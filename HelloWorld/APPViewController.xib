@@ -51,17 +51,6 @@
                         <action selector="selectPhoto:" destination="-1" eventType="touchUpInside" id="45"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L8s-Yw-OXw">
-                    <rect key="frame" x="99" y="489" width="107" height="71"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Upload">
-                        <color key="titleColor" red="0.14558420941593364" green="1" blue="0.17113395263696485" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="Upload:" destination="-1" eventType="touchUpInside" id="7Ls-al-0K0"/>
-                    </connections>
-                </button>
                 <navigationBar contentMode="scaleToFill" id="68">
                     <rect key="frame" x="0.0" y="19" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -99,6 +88,18 @@
                         <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="44"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L8s-Yw-OXw">
+                    <rect key="frame" x="89" y="496" width="142" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="UPLOAD" backgroundImage="blue-button.png">
+                        <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="Upload:" destination="-1" eventType="touchUpInside" id="7Ls-al-0K0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>
@@ -107,6 +108,7 @@
         <image name="Upload.png" width="638" height="452"/>
         <image name="back1.png" width="25" height="25"/>
         <image name="background1.png" width="1200" height="1920"/>
+        <image name="blue-button.png" width="300" height="153"/>
         <image name="folder_add.png" width="225" height="225"/>
         <image name="photo1.png" width="204" height="204"/>
     </resources>

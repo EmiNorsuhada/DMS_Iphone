@@ -42,6 +42,8 @@
 		C3778CAB1B71B88E007F452C /* upload1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CA91B71B88E007F452C /* upload1.png */; };
 		C3778CAE1B71B992007F452C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CAC1B71B992007F452C /* back.png */; };
 		C3778CAF1B71B992007F452C /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CAD1B71B992007F452C /* next.png */; };
+		C3778CB11B71DC76007F452C /* BlueSquareButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CB01B71DC76007F452C /* BlueSquareButton.png */; };
+		C3778CB31B71DDA5007F452C /* blue-button.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778CB21B71DDA5007F452C /* blue-button.png */; };
 		C38476E71B4245D700063D90 /* DMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38476E51B4245D700063D90 /* DMSViewController.m */; };
 		C38476E81B4245D700063D90 /* DMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38476E61B4245D700063D90 /* DMSViewController.xib */; };
 		C38476EC1B424CF000063D90 /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38476EA1B424CF000063D90 /* ModuleViewController.m */; };
@@ -129,6 +131,8 @@
 		C3778CA91B71B88E007F452C /* upload1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload1.png; sourceTree = "<group>"; };
 		C3778CAC1B71B992007F452C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		C3778CAD1B71B992007F452C /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		C3778CB01B71DC76007F452C /* BlueSquareButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueSquareButton.png; sourceTree = "<group>"; };
+		C3778CB21B71DDA5007F452C /* blue-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-button.png"; sourceTree = "<group>"; };
 		C38476E41B4245D700063D90 /* DMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSViewController.h; sourceTree = "<group>"; };
 		C38476E51B4245D700063D90 /* DMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSViewController.m; sourceTree = "<group>"; };
 		C38476E61B4245D700063D90 /* DMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMSViewController.xib; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				C3778CAD1B71B992007F452C /* next.png */,
 				C3778C841B71AD96007F452C /* camera.png */,
 				C3778C851B71AD96007F452C /* doc1.png */,
+				C3778CB21B71DDA5007F452C /* blue-button.png */,
+				C3778CB01B71DC76007F452C /* BlueSquareButton.png */,
 				C3778CA81B71B88E007F452C /* back1.png */,
 				C3778CA91B71B88E007F452C /* upload1.png */,
 				C3778C861B71AD96007F452C /* Gif1.png */,
@@ -443,6 +449,7 @@
 				C38476E81B4245D700063D90 /* DMSViewController.xib in Resources */,
 				C3778C921B71AD96007F452C /* PDF1.png in Resources */,
 				6A02B2781B69CA7E00A524A9 /* ProfileViewController.xib in Resources */,
+				C3778CB31B71DDA5007F452C /* blue-button.png in Resources */,
 				C38476F21B424EC200063D90 /* SearchViewController.xib in Resources */,
 				C3778C8F1B71AD96007F452C /* IMG1.png in Resources */,
 				6ABAFD631B54D9EC000EB3AF /* BAckground.png in Resources */,
@@ -462,6 +469,7 @@
 				C38476FD1B42532400063D90 /* Download_Files_4_You_Logo.png in Resources */,
 				C38476FB1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png in Resources */,
 				C3778CAE1B71B992007F452C /* back.png in Resources */,
+				C3778CB11B71DC76007F452C /* BlueSquareButton.png in Resources */,
 				6AF4EBEE1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png in Resources */,
 				C38477011B42576F00063D90 /* small-button-md.png in Resources */,
 				6A1B401A1B6F257C00FEEFEC /* User.png in Resources */,
