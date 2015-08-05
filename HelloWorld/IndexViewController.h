@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>{
+@interface IndexViewController : UIViewController <UIAlertViewDelegate>{
 	
 	NSXMLParser *rssParser;
 	NSMutableArray *articles;
@@ -21,14 +21,13 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *ProfileNameTxt;
 @property (weak, nonatomic) IBOutlet UITextField *UserNameTxt;
-@property (weak, nonatomic) IBOutlet UITableView *SearchTableView;
 @property (strong, nonatomic) IBOutlet UILabel *Type;
 
 
 - (IBAction)BackBtn:(id)sender;
 - (IBAction)SearchBtn:(id)sender;
 - (IBAction)TxtDidEnd:(id)sender;
-- (void)parseXMLFileAtURL:(NSString *)URL;
+- (void)parseXMLFileAtURL;
 - (IBAction)NExt:(id)sender;
 
 @end

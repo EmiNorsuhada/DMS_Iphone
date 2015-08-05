@@ -258,11 +258,11 @@ NSString *strImageName;
 {
      NSLog(@"celltext %@", [[articles objectAtIndex:indexPath.row ]objectForKey:@"DocID"]);
     
-    NSString *profileID = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
+    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileID"];
     NSString *profileName = [[articles objectAtIndex:indexPath.row ]objectForKey:@"profileName"];
    
 
-    [[NSUserDefaults standardUserDefaults] setObject:profileID forKey:@"profileID"];
+    [[NSUserDefaults standardUserDefaults] setObject:NameValue forKey:@"NameValue"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [[NSUserDefaults standardUserDefaults] setObject:profileName forKey:@"profileName"];

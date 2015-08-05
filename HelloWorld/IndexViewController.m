@@ -44,13 +44,9 @@ bool proceed;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.SearchTableView sizeToFit];
     [self parseXMLFileAtURL];
-	count = 0;
-	temp = @"";
 	
 //	UserNameTxt.text = @"Jacob*";
-	
 	
 	NSString *pName = [[NSUserDefaults standardUserDefaults] stringForKey:@"profileName"];
 	
@@ -80,7 +76,6 @@ bool proceed;
 {
 	
 	[self parseXMLFileAtURL];
-	[self.SearchTableView reloadData];
 	
 	[UserNameTxt resignFirstResponder];
 }
@@ -118,8 +113,6 @@ bool proceed;
 //    NSString *ImageNameValue = [[NSUserDefaults standardUserDefaults]
 //                                stringForKey:@"ApplicationNo"];
 
-    
-    
 	//NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
      NSString *post = [NSString stringWithFormat:@"intProfileID=%@",NameValue];
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
