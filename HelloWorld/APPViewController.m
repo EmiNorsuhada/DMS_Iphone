@@ -16,11 +16,22 @@
 
 @implementation APPViewController
 @synthesize encoded;
+NSString *temp;
+int count;
+NSString *colID;
+NSString *colName;
+NSString *colDesc;
+NSString *colData;
+NSString *Compulsory;
+NSString *DataLength;
+bool proceed;
 
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    count = 0;
+    temp = @"";
 	// Do any additional setup after loading the view, typically from a nib.
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -160,6 +171,91 @@
     
     
 }
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    
+    NSString *errorString = [NSString stringWithFormat:@"Error code %i", [parseError code]];
+    NSLog(@"Error parsing XML: %@", errorString);
+    
+    
+    errorParsing=YES;
+}
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser{
+    NSLog(@"File found and parsing started");
+    
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    currentElement = [elementName copy];
+    ElementValue = [[NSMutableString alloc] init];
+    if ([elementName isEqualToString:@"string"]) {
+        item = [[NSMutableDictionary alloc] init];
+    }
+}
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+    ElementValue = [[NSMutableString alloc]initWithString:string];
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    
+    NSLog(@"%d-set into Item: elementName: %@ ElementValue: %@", count, elementName, ElementValue);
+    
+    if ([elementName isEqualToString:@"string"]) {
+        colID = ElementValue;
+    }
+    if ([elementName isEqualToString:@"string"])
+    {
+        NSDictionary *tempData = [[NSDictionary alloc] initWithObjectsAndKeys:colID, @"string",nil];
+        [articles addObject:[tempData copy]];
+    }
+    
+    
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    
+    if (errorParsing == NO)
+    {
+        NSLog(@"%@", articles);
+        
+         NSString *Feedback =colID;
+        
+        if ([Feedback isEqualToString:@"1"])
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DMS" message:@"Succesfully Upload"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil, nil];
+            [alertView show];
+            
+            _imageView.image =nil;
+
+        }
+        else
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DMS" message:Feedback
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+        
+       
+        temp = @"";
+        NSLog(@"XML processing done!");
+    } else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DMS" message:@"Upload Failed"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+         [alertView show];
+        
+        NSLog(@"Error occurred during XML processing");
+    }
+}
+
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
 
