@@ -157,20 +157,20 @@
 		C39D16951B672D8800A90D38 /* JPEG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JPEG.png; sourceTree = "<group>"; };
 		C39D16961B672D8800A90D38 /* PDF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDF.png; sourceTree = "<group>"; };
 		C39D16971B672D8800A90D38 /* tif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tif.png; sourceTree = "<group>"; };
-		F445F9AF1805BAD9003CF95E /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F445F9AF1805BAD9003CF95E /* Docuflo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Docuflo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F445F9B21805BAD9003CF95E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F445F9B41805BAD9003CF95E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F445F9B61805BAD9003CF95E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F445F9BA1805BAD9003CF95E /* HelloWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloWorld-Info.plist"; sourceTree = "<group>"; };
+		F445F9BA1805BAD9003CF95E /* Docuflo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Docuflo-Info.plist"; sourceTree = "<group>"; };
 		F445F9BC1805BAD9003CF95E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F445F9BE1805BAD9003CF95E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F445F9C01805BAD9003CF95E /* HelloWorld-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloWorld-Prefix.pch"; sourceTree = "<group>"; };
+		F445F9C01805BAD9003CF95E /* Docuflo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Docuflo-Prefix.pch"; sourceTree = "<group>"; };
 		F445F9C11805BAD9003CF95E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F445F9C21805BAD9003CF95E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F445F9C41805BAD9003CF95E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F445F9CA1805BADA003CF95E /* HelloWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F445F9CA1805BADA003CF95E /* DocufloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocufloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F445F9CB1805BADA003CF95E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F445F9D31805BADA003CF95E /* HelloWorldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloWorldTests-Info.plist"; sourceTree = "<group>"; };
+		F445F9D31805BADA003CF95E /* DocufloTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocufloTests-Info.plist"; sourceTree = "<group>"; };
 		F445F9D51805BADA003CF95E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F445F9D71805BADA003CF95E /* HelloWorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,8 +258,8 @@
 		F445F9B01805BAD9003CF95E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F445F9AF1805BAD9003CF95E /* HelloWorld.app */,
-				F445F9CA1805BADA003CF95E /* HelloWorldTests.xctest */,
+				F445F9AF1805BAD9003CF95E /* Docuflo.app */,
+				F445F9CA1805BADA003CF95E /* DocufloTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,10 +318,10 @@
 			isa = PBXGroup;
 			children = (
 				C38476F31B42504D00063D90 /* Image */,
-				F445F9BA1805BAD9003CF95E /* HelloWorld-Info.plist */,
+				F445F9BA1805BAD9003CF95E /* Docuflo-Info.plist */,
 				F445F9BB1805BAD9003CF95E /* InfoPlist.strings */,
 				F445F9BE1805BAD9003CF95E /* main.m */,
-				F445F9C01805BAD9003CF95E /* HelloWorld-Prefix.pch */,
+				F445F9C01805BAD9003CF95E /* Docuflo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 		F445F9D21805BADA003CF95E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F445F9D31805BADA003CF95E /* HelloWorldTests-Info.plist */,
+				F445F9D31805BADA003CF95E /* DocufloTests-Info.plist */,
 				F445F9D41805BADA003CF95E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -347,9 +347,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F445F9AE1805BAD9003CF95E /* HelloWorld */ = {
+		F445F9AE1805BAD9003CF95E /* Docuflo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F445F9DB1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorld" */;
+			buildConfigurationList = F445F9DB1805BADA003CF95E /* Build configuration list for PBXNativeTarget "Docuflo" */;
 			buildPhases = (
 				F445F9AB1805BAD9003CF95E /* Sources */,
 				F445F9AC1805BAD9003CF95E /* Frameworks */,
@@ -359,14 +359,14 @@
 			);
 			dependencies = (
 			);
-			name = HelloWorld;
+			name = Docuflo;
 			productName = HelloWorld;
-			productReference = F445F9AF1805BAD9003CF95E /* HelloWorld.app */;
+			productReference = F445F9AF1805BAD9003CF95E /* Docuflo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F445F9C91805BADA003CF95E /* HelloWorldTests */ = {
+		F445F9C91805BADA003CF95E /* DocufloTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F445F9DE1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorldTests" */;
+			buildConfigurationList = F445F9DE1805BADA003CF95E /* Build configuration list for PBXNativeTarget "DocufloTests" */;
 			buildPhases = (
 				F445F9C61805BADA003CF95E /* Sources */,
 				F445F9C71805BADA003CF95E /* Frameworks */,
@@ -377,9 +377,9 @@
 			dependencies = (
 				F445F9D01805BADA003CF95E /* PBXTargetDependency */,
 			);
-			name = HelloWorldTests;
+			name = DocufloTests;
 			productName = HelloWorldTests;
-			productReference = F445F9CA1805BADA003CF95E /* HelloWorldTests.xctest */;
+			productReference = F445F9CA1805BADA003CF95E /* DocufloTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -399,7 +399,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F445F9AA1805BAD9003CF95E /* Build configuration list for PBXProject "HelloWorld" */;
+			buildConfigurationList = F445F9AA1805BAD9003CF95E /* Build configuration list for PBXProject "Docuflo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -411,8 +411,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F445F9AE1805BAD9003CF95E /* HelloWorld */,
-				F445F9C91805BADA003CF95E /* HelloWorldTests */,
+				F445F9AE1805BAD9003CF95E /* Docuflo */,
+				F445F9C91805BADA003CF95E /* DocufloTests */,
 			);
 		};
 /* End PBXProject section */
@@ -518,7 +518,7 @@
 /* Begin PBXTargetDependency section */
 		F445F9D01805BADA003CF95E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F445F9AE1805BAD9003CF95E /* HelloWorld */;
+			target = F445F9AE1805BAD9003CF95E /* Docuflo */;
 			targetProxy = F445F9CF1805BADA003CF95E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -564,7 +564,10 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Docuflo/Docuflo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -603,6 +606,9 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Docuflo/Docuflo-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -623,10 +629,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
-				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
+				GCC_PREFIX_HEADER = "HelloWorld/Docuflo-Prefix.pch";
+				INFOPLIST_FILE = "HelloWorld/Docuflo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Docuflo;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -641,10 +647,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
-				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
+				GCC_PREFIX_HEADER = "HelloWorld/Docuflo-Prefix.pch";
+				INFOPLIST_FILE = "HelloWorld/Docuflo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Docuflo;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -655,20 +661,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloWorld.app/HelloWorld";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Docuflo.app/Docuflo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				GCC_PREFIX_HEADER = "HelloWorld/Docuflo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "HelloWorldTests/HelloWorldTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "HelloWorldTests/DocufloTests-Info.plist";
+				PRODUCT_NAME = DocufloTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -678,16 +684,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloWorld.app/HelloWorld";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Docuflo.app/Docuflo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
-				INFOPLIST_FILE = "HelloWorldTests/HelloWorldTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HelloWorld/Docuflo-Prefix.pch";
+				INFOPLIST_FILE = "HelloWorldTests/DocufloTests-Info.plist";
+				PRODUCT_NAME = DocufloTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -696,7 +702,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F445F9AA1805BAD9003CF95E /* Build configuration list for PBXProject "HelloWorld" */ = {
+		F445F9AA1805BAD9003CF95E /* Build configuration list for PBXProject "Docuflo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F445F9D91805BADA003CF95E /* Debug */,
@@ -705,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F445F9DB1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorld" */ = {
+		F445F9DB1805BADA003CF95E /* Build configuration list for PBXNativeTarget "Docuflo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F445F9DC1805BADA003CF95E /* Debug */,
@@ -714,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F445F9DE1805BADA003CF95E /* Build configuration list for PBXNativeTarget "HelloWorldTests" */ = {
+		F445F9DE1805BADA003CF95E /* Build configuration list for PBXNativeTarget "DocufloTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F445F9DF1805BADA003CF95E /* Debug */,
