@@ -26,6 +26,7 @@
 		6AF4EBEE1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF4EBED1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png */; };
 		6AF4EBF01B6F4EE500EF2999 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF4EBEF1B6F4EE500EF2999 /* Upload.png */; };
 		6AF4EBF31B6F6AA900EF2999 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF4EBF21B6F6AA900EF2999 /* Base64.m */; };
+		6AF5D3991B7368D7005CDD58 /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF5D3981B7368D7005CDD58 /* launchImage.png */; };
 		6AFC2D971B6B2E9F00C0861F /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC2D951B6B2E9F00C0861F /* FolderViewController.m */; };
 		6AFC2D981B6B2E9F00C0861F /* FolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC2D961B6B2E9F00C0861F /* FolderViewController.xib */; };
 		C373F22E1B62364B0018639D /* Docuflo Logo.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C373F22D1B62364B0018639D /* Docuflo Logo.PNG */; };
@@ -114,6 +115,7 @@
 		6AF4EBEF1B6F4EE500EF2999 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
 		6AF4EBF11B6F6AA900EF2999 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		6AF4EBF21B6F6AA900EF2999 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		6AF5D3981B7368D7005CDD58 /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
 		6AFC2D941B6B2E9F00C0861F /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
 		6AFC2D951B6B2E9F00C0861F /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
 		6AFC2D961B6B2E9F00C0861F /* FolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolderViewController.xib; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		C38476F31B42504D00063D90 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6AF5D3981B7368D7005CDD58 /* launchImage.png */,
 				C3778CAC1B71B992007F452C /* back.png */,
 				C3778CAD1B71B992007F452C /* next.png */,
 				C3778C841B71AD96007F452C /* camera.png */,
@@ -450,6 +453,7 @@
 				C3778C921B71AD96007F452C /* PDF1.png in Resources */,
 				6A02B2781B69CA7E00A524A9 /* ProfileViewController.xib in Resources */,
 				C3778CB31B71DDA5007F452C /* blue-button.png in Resources */,
+				6AF5D3991B7368D7005CDD58 /* launchImage.png in Resources */,
 				C38476F21B424EC200063D90 /* SearchViewController.xib in Resources */,
 				C3778C8F1B71AD96007F452C /* IMG1.png in Resources */,
 				6ABAFD631B54D9EC000EB3AF /* BAckground.png in Resources */,

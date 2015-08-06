@@ -47,7 +47,7 @@ NSString *strImageName;
 	count = 0;
 	temp = @"";
 	
-	UserNameTxt.text = @"Jacob*";
+	UserNameTxt.text = @"";
 	
     // Do any additional setup after loading the view from its nib.
 }
@@ -96,13 +96,19 @@ NSString *strImageName;
 - (void)parseXMLFileAtURL
 {
 	//NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
-     NSString *post = [NSString stringWithFormat:@"Profile_Name=%@&Column_Desc=Name|ID20No&Column_Data=%@|1",@"PPL",UserNameTxt.text];
+    
+    
+//    
+//     NSString *post = [NSString stringWithFormat:@"Profile_Name=%@&Column_Desc=Name|ID20No&Column_Data=%@|1",@"PPL",UserNameTxt.text];
+//    
+    NSString *post = [NSString stringWithFormat:@"strCriteria=%@",UserNameTxt.text];
+    
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 	
 	
-	[request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/ProfileSearchMobile"]];
+	[request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/Search"]];
 	
 	[request setHTTPMethod:@"POST"];
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];

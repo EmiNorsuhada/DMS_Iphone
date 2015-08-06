@@ -38,11 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld/SearchViewController.m"
-            timestampString = "459924281.40923"
+            timestampString = "460549612.641997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-parseXMLFileAtURL"
             landmarkType = "5">
          </BreakpointContent>
