@@ -53,22 +53,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HelloWorld/ProfileViewController.m"
-            timestampString = "459933758.184658"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-parser:parseErrorOccurred:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "HelloWorld/SearchViewController.m"
             timestampString = "459924281.40923"
             startingColumnNumber = "9223372036854775807"
@@ -76,22 +60,6 @@
             startingLineNumber = "121"
             endingLineNumber = "121"
             landmarkName = "-parseXMLFileAtURL"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HelloWorld/APPViewController.m"
-            timestampString = "460370437.409432"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -118,12 +86,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld/APPViewController.m"
-            timestampString = "460370437.409432"
+            timestampString = "460523487.709913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-parseXMLFileAtURL"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HelloWorld/APPViewController.m"
+            timestampString = "460526711.694778"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-connection:didReceiveData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

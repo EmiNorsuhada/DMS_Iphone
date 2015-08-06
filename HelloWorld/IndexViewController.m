@@ -301,6 +301,13 @@ bool proceed;
 		NSLog(@"CB: %@", combineStr);
         [[NSUserDefaults standardUserDefaults] setObject:combineStr forKey:@"combineStrIndex"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NSString *FirstParam =[(UITextField *)[self.view viewWithTag:1] text];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:FirstParam forKey:@"combineTest"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+
 		FolderViewController *viewController = [[FolderViewController alloc] init];
 		[self presentViewController:viewController animated:YES completion:nil];
 	}

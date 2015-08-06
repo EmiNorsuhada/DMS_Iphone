@@ -1,10 +1,11 @@
 //
 //  APPViewController.m
-//  CameraApp
+//  HelloWorld
 //
-//  Created by Rafael Garcia Leiva on 10/04/13.
-//  Copyright (c) 2013 Appcoda. All rights reserved.
+//  Created by Prem on 30/6/15.
+//  Copyright (c) 2015 Appcoda. All rights reserved.
 //
+
 
 #import "APPViewController.h"
 #import "FolderViewController.h"
@@ -32,7 +33,7 @@ bool proceed;
     [super viewDidLoad];
     count = 0;
     temp = @"";
-	// Do any additional setup after loading the view, typically from a nib.
+	
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
     
@@ -89,87 +90,75 @@ bool proceed;
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
     
-    NSData* data = UIImageJPEGRepresentation(chosenImage, 0.3f);
+    NSData* data = UIImageJPEGRepresentation(chosenImage, 0.2f);
     encoded = [Base64 encode:data];
-    
-//    CGDataProviderRef provider = CGImageGetDataProvider(chosenImage.CGImage);
-//    NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
-//    
-//    const uint8_t* bytes = [data bytes];
-//    data= UIImageJPEGRepresentation(chosenImage,1.0);
-    
-   
-    
- //   NSData *imageData = UIImageJPEGRepresentation(self.imgHeaderPhoto.image, 0.1);
-    
-  //  encoded = [Base64 encode:data];
-    
-   // NSLog(@"bytes %s",bytes);
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
 
 - (void)parseXMLFileAtURL
 {
-    
-    
     NSString *FolderPath = [[NSUserDefaults standardUserDefaults]
                            stringForKey:@"FolderPath"];
-    
     NSString *combineStrIndex = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"combineStrIndex"];
+    NSString *combineTest = [[NSUserDefaults standardUserDefaults]
+                                 stringForKey:@"combineTest"];
+    NSString *combineTest2 =[NSString stringWithFormat:@"%@.png",combineTest];
     
-    
-    
-    NSLog(@"encoded%@",FolderPath);
-    
-    //NSString *post = @"Profile_Name=PPL&Column_Desc=Name|ID%20No&Column_Data=Jacob%20Chin|1";
     NSString *post = [NSString stringWithFormat:
-                      @"FileContent=%@&strFileName=%@&strProfile=%@&strFolderName=%@&ProfileValue=%@&userID=%@",encoded,@"Image.png",@"PPL",
+                      @"FileContent=%@&strFileName=%@&strProfile=%@&strFolderName=%@&ProfileValue=%@&userID=%@",encoded,combineTest2,@"PPL",
                       FolderPath,combineStrIndex,@"admin"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    
     [request setURL:[NSURL URLWithString:@"http://192.168.2.28/DocufloSDK/docuflosdk.asmx/ExportToDMS"]];
-    
-    
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/x-www-form-urlencoded;  charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    NSData *urlData;
-    NSURLResponse *response;
-    NSError *error;
-    urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     if(conn) {
         NSLog(@"Connection Successful");
     } else {
         NSLog(@"Connection could not be made");
     }
-    NSString *aStr = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
-    
-    
     NSData *xmlFile;
-    xmlFile = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
-    
-    
     articles = [[NSMutableArray alloc] init];
     errorParsing=NO;
-    
     rssParser = [[NSXMLParser alloc] initWithData:xmlFile];
     [rssParser setDelegate:self];
-    // You may need to turn some of these on depending on the type of XML file you are parsing
     [rssParser setShouldProcessNamespaces:NO];
     [rssParser setShouldReportNamespacePrefixes:NO];
     [rssParser setShouldResolveExternalEntities:NO];
-    
     [rssParser parse];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
     
+    NSString *sData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSRange type_m = [sData rangeOfString:@">1</string>"];
     
+    if (type_m.location != NSNotFound)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DMS" message:@"Succesfully Upload"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        _imageView.image =nil;
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DMS" message:@"Upload Failed"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        [alertView show];
+ 
+    }
+
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -189,7 +178,8 @@ bool proceed;
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     currentElement = [elementName copy];
     ElementValue = [[NSMutableString alloc] init];
-    if ([elementName isEqualToString:@"string"]) {
+    if ([elementName isEqualToString:@"string"])
+    {
         item = [[NSMutableDictionary alloc] init];
     }
 }
@@ -201,7 +191,8 @@ bool proceed;
     
     NSLog(@"%d-set into Item: elementName: %@ ElementValue: %@", count, elementName, ElementValue);
     
-    if ([elementName isEqualToString:@"string"]) {
+    if ([elementName isEqualToString:@"string"])
+    {
         colID = ElementValue;
     }
     if ([elementName isEqualToString:@"string"])
@@ -243,7 +234,7 @@ bool proceed;
         
        
         temp = @"";
-        NSLog(@"XML processing done!");
+       
     } else
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DMS" message:@"Upload Failed"
@@ -267,7 +258,6 @@ bool proceed;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
-//    FolderViewController *controller = [[FolderViewController alloc]init];
-//    [self presentViewController:controller animated:YES completion:Nil];
+
 }
 @end
