@@ -22,6 +22,10 @@
 		6ABAFD611B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ABAFD601B54D981000EB3AF /* orange-ribbon-abstract-hd1080p.jpg */; };
 		6ABAFD631B54D9EC000EB3AF /* BAckground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABAFD621B54D9EC000EB3AF /* BAckground.png */; };
 		6ABAFD681B55FC43000EB3AF /* pdfView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAFD671B55FC43000EB3AF /* pdfView.m */; };
+		6AF003AB1B7485FC003C618E /* Icon-60@3x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF003A91B7485FC003C618E /* Icon-60@3x-1.png */; };
+		6AF003AC1B7485FC003C618E /* Icon-40@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF003AA1B7485FC003C618E /* Icon-40@2x-1.png */; };
+		6AF003AE1B7486A0003C618E /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF003AD1B7486A0003C618E /* Icon-60@2x.png */; };
+		6AF003B01B7486BA003C618E /* Icon-40@2x-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF003AF1B7486BA003C618E /* Icon-40@2x-2.png */; };
 		6AF4EBEC1B6F4B7400EF2999 /* MMX DIGITAL CAMERA.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF4EBEB1B6F4B7400EF2999 /* MMX DIGITAL CAMERA.png */; };
 		6AF4EBEE1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF4EBED1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png */; };
 		6AF4EBF01B6F4EE500EF2999 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF4EBEF1B6F4EE500EF2999 /* Upload.png */; };
@@ -110,6 +114,10 @@
 		6ABAFD621B54D9EC000EB3AF /* BAckground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BAckground.png; sourceTree = "<group>"; };
 		6ABAFD661B55FC43000EB3AF /* pdfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pdfView.h; sourceTree = "<group>"; };
 		6ABAFD671B55FC43000EB3AF /* pdfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pdfView.m; sourceTree = "<group>"; };
+		6AF003A91B7485FC003C618E /* Icon-60@3x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x-1.png"; sourceTree = "<group>"; };
+		6AF003AA1B7485FC003C618E /* Icon-40@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x-1.png"; sourceTree = "<group>"; };
+		6AF003AD1B7486A0003C618E /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		6AF003AF1B7486BA003C618E /* Icon-40@2x-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x-2.png"; sourceTree = "<group>"; };
 		6AF4EBEB1B6F4B7400EF2999 /* MMX DIGITAL CAMERA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MMX DIGITAL CAMERA.png"; sourceTree = "<group>"; };
 		6AF4EBED1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MMX DIGITAL CAMERA - PICTURES.png"; sourceTree = "<group>"; };
 		6AF4EBEF1B6F4EE500EF2999 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
@@ -204,6 +212,10 @@
 		C38476F31B42504D00063D90 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6AF003AF1B7486BA003C618E /* Icon-40@2x-2.png */,
+				6AF003AD1B7486A0003C618E /* Icon-60@2x.png */,
+				6AF003A91B7485FC003C618E /* Icon-60@3x-1.png */,
+				6AF003AA1B7485FC003C618E /* Icon-40@2x-1.png */,
 				6AF5D3981B7368D7005CDD58 /* launchImage.png */,
 				C3778CAC1B71B992007F452C /* back.png */,
 				C3778CAD1B71B992007F452C /* next.png */,
@@ -427,6 +439,10 @@
 			files = (
 				C3778CAF1B71B992007F452C /* next.png in Resources */,
 				6A16300C1B673FB200EDE07F /* close.png in Resources */,
+				6AF003AE1B7486A0003C618E /* Icon-60@2x.png in Resources */,
+				6AF003B01B7486BA003C618E /* Icon-40@2x-2.png in Resources */,
+				6AF003AC1B7485FC003C618E /* Icon-40@2x-1.png in Resources */,
+				6AF003AB1B7485FC003C618E /* Icon-60@3x-1.png in Resources */,
 				6A03FB231B709E2D002696B7 /* folder_add.png in Resources */,
 				C3778C8E1B71AD96007F452C /* Gif1.png in Resources */,
 				C39D169C1B672D8800A90D38 /* IMG.png in Resources */,
@@ -638,7 +654,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Docuflo;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -656,7 +672,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Docuflo;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
