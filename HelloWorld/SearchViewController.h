@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *SearchTableView;
 @property (strong, nonatomic) IBOutlet UILabel *Type;
 @property (nonatomic, retain) IBOutlet UIView *SView;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Swipe;
+
 
 
 - (IBAction)BackBtn:(id)sender;

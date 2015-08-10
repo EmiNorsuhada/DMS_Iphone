@@ -62,6 +62,9 @@ NSString *strImageName;
 - (IBAction)BackBtn:(id)sender {
 	
 	UITapGestureRecognizer *tapImageRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(displayOldView:)];
+	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(displayOldView:)];
+	swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+	
 	
 	[[NSBundle mainBundle] loadNibNamed:@"PopupView" owner:self options:nil];
 	CATransition *transition = [CATransition animation];
@@ -69,7 +72,11 @@ NSString *strImageName;
 	transition.type = kCATransitionMoveIn;
 	[SView.layer addAnimation:transition forKey:nil];
 	[self.view addGestureRecognizer:tapImageRecognizer];
+	[self.view addGestureRecognizer:swipeRecognizer];
 	[self.view addSubview:SView];
+	
+	[UserNameTxt resignFirstResponder];
+	
 	
 }
 
