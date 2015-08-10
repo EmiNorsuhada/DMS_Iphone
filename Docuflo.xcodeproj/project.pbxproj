@@ -33,6 +33,15 @@
 		6AF5D3991B7368D7005CDD58 /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF5D3981B7368D7005CDD58 /* launchImage.png */; };
 		6AFC2D971B6B2E9F00C0861F /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC2D951B6B2E9F00C0861F /* FolderViewController.m */; };
 		6AFC2D981B6B2E9F00C0861F /* FolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC2D961B6B2E9F00C0861F /* FolderViewController.xib */; };
+		C30D26611B78873F00543898 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D265B1B78873F00543898 /* Menu.png */; };
+		C30D26621B78873F00543898 /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30D265C1B78873F00543898 /* PopupView.xib */; };
+		C30D26631B78873F00543898 /* show-menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D265D1B78873F00543898 /* show-menu-icon.png */; };
+		C30D26641B78873F00543898 /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D265E1B78873F00543898 /* user1.png */; };
+		C30D26651B78873F00543898 /* user2.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D265F1B78873F00543898 /* user2.png */; };
+		C30D26661B78873F00543898 /* whiteBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D26601B78873F00543898 /* whiteBackground.png */; };
+		C30D26691B788B1100543898 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D26671B788B1100543898 /* logout.png */; };
+		C30D266A1B788B1100543898 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D26681B788B1100543898 /* setting.png */; };
+		C30D266C1B788BEE00543898 /* upload2.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D266B1B788BEE00543898 /* upload2.png */; };
 		C373F22E1B62364B0018639D /* Docuflo Logo.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C373F22D1B62364B0018639D /* Docuflo Logo.PNG */; };
 		C373F2321B65CF980018639D /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = C373F2311B65CF980018639D /* background1.png */; };
 		C3778C8C1B71AD96007F452C /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778C841B71AD96007F452C /* camera.png */; };
@@ -127,6 +136,15 @@
 		6AFC2D941B6B2E9F00C0861F /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
 		6AFC2D951B6B2E9F00C0861F /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
 		6AFC2D961B6B2E9F00C0861F /* FolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolderViewController.xib; sourceTree = "<group>"; };
+		C30D265B1B78873F00543898 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+		C30D265C1B78873F00543898 /* PopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
+		C30D265D1B78873F00543898 /* show-menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "show-menu-icon.png"; sourceTree = "<group>"; };
+		C30D265E1B78873F00543898 /* user1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user1.png; sourceTree = "<group>"; };
+		C30D265F1B78873F00543898 /* user2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user2.png; sourceTree = "<group>"; };
+		C30D26601B78873F00543898 /* whiteBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteBackground.png; sourceTree = "<group>"; };
+		C30D26671B788B1100543898 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
+		C30D26681B788B1100543898 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		C30D266B1B788BEE00543898 /* upload2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload2.png; sourceTree = "<group>"; };
 		C373F22D1B62364B0018639D /* Docuflo Logo.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Docuflo Logo.PNG"; sourceTree = "<group>"; };
 		C373F2311B65CF980018639D /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		C3778C841B71AD96007F452C /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
@@ -212,10 +230,18 @@
 		C38476F31B42504D00063D90 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C30D26671B788B1100543898 /* logout.png */,
+				C30D26681B788B1100543898 /* setting.png */,
 				6AF003AF1B7486BA003C618E /* Icon-40@2x-2.png */,
 				6AF003AD1B7486A0003C618E /* Icon-60@2x.png */,
 				6AF003A91B7485FC003C618E /* Icon-60@3x-1.png */,
+				C30D266B1B788BEE00543898 /* upload2.png */,
 				6AF003AA1B7485FC003C618E /* Icon-40@2x-1.png */,
+				C30D265B1B78873F00543898 /* Menu.png */,
+				C30D265D1B78873F00543898 /* show-menu-icon.png */,
+				C30D265E1B78873F00543898 /* user1.png */,
+				C30D265F1B78873F00543898 /* user2.png */,
+				C30D26601B78873F00543898 /* whiteBackground.png */,
 				6AF5D3981B7368D7005CDD58 /* launchImage.png */,
 				C3778CAC1B71B992007F452C /* back.png */,
 				C3778CAD1B71B992007F452C /* next.png */,
@@ -306,6 +332,7 @@
 				C38476EE1B424EC200063D90 /* SearchViewController.h */,
 				C38476EF1B424EC200063D90 /* SearchViewController.m */,
 				C38476F01B424EC200063D90 /* SearchViewController.xib */,
+				C30D265C1B78873F00543898 /* PopupView.xib */,
 				6A02B2741B69CA7E00A524A9 /* ProfileViewController.h */,
 				6A02B2751B69CA7E00A524A9 /* ProfileViewController.m */,
 				6A02B2761B69CA7E00A524A9 /* ProfileViewController.xib */,
@@ -437,10 +464,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30D26641B78873F00543898 /* user1.png in Resources */,
 				C3778CAF1B71B992007F452C /* next.png in Resources */,
 				6A16300C1B673FB200EDE07F /* close.png in Resources */,
 				6AF003AE1B7486A0003C618E /* Icon-60@2x.png in Resources */,
 				6AF003B01B7486BA003C618E /* Icon-40@2x-2.png in Resources */,
+				C30D266C1B788BEE00543898 /* upload2.png in Resources */,
 				6AF003AC1B7485FC003C618E /* Icon-40@2x-1.png in Resources */,
 				6AF003AB1B7485FC003C618E /* Icon-60@3x-1.png in Resources */,
 				6A03FB231B709E2D002696B7 /* folder_add.png in Resources */,
@@ -455,6 +484,7 @@
 				C3778C911B71AD96007F452C /* Jpg1.png in Resources */,
 				C3778CAA1B71B88E007F452C /* back1.png in Resources */,
 				6A113CFF1B6F1F790069DE55 /* open folder.png in Resources */,
+				C30D26661B78873F00543898 /* whiteBackground.png in Resources */,
 				C39D169A1B672D8800A90D38 /* file-xml.png in Resources */,
 				6A02B27D1B6A05E000A524A9 /* IndexViewController.xib in Resources */,
 				C3778C8D1B71AD96007F452C /* doc1.png in Resources */,
@@ -480,16 +510,22 @@
 				C3977D491B672BE000EA5B33 /* tiff-128.png in Resources */,
 				C38476ED1B424CF000063D90 /* ModuleViewController.xib in Resources */,
 				C3778CAB1B71B88E007F452C /* upload1.png in Resources */,
+				C30D26621B78873F00543898 /* PopupView.xib in Resources */,
 				C39D169F1B672D8800A90D38 /* tif.png in Resources */,
 				C373F2321B65CF980018639D /* background1.png in Resources */,
 				6ABAFD5F1B54C070000EB3AF /* abstract_business_background_311474.jpg in Resources */,
 				6AF4EBF01B6F4EE500EF2999 /* Upload.png in Resources */,
 				F445F9C51805BAD9003CF95E /* Images.xcassets in Resources */,
+				C30D26611B78873F00543898 /* Menu.png in Resources */,
+				C30D26631B78873F00543898 /* show-menu-icon.png in Resources */,
+				C30D26691B788B1100543898 /* logout.png in Resources */,
 				6AFC2D981B6B2E9F00C0861F /* FolderViewController.xib in Resources */,
 				C38476FD1B42532400063D90 /* Download_Files_4_You_Logo.png in Resources */,
 				C38476FB1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png in Resources */,
+				C30D26651B78873F00543898 /* user2.png in Resources */,
 				C3778CAE1B71B992007F452C /* back.png in Resources */,
 				C3778CB11B71DC76007F452C /* BlueSquareButton.png in Resources */,
+				C30D266A1B788B1100543898 /* setting.png in Resources */,
 				6AF4EBEE1B6F4B8500EF2999 /* MMX DIGITAL CAMERA - PICTURES.png in Resources */,
 				C38477011B42576F00063D90 /* small-button-md.png in Resources */,
 				6A1B401A1B6F257C00FEEFEC /* User.png in Resources */,
@@ -651,7 +687,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/Docuflo-Prefix.pch";
 				INFOPLIST_FILE = "HelloWorld/Docuflo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Docuflo;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -669,7 +705,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/Docuflo-Prefix.pch";
 				INFOPLIST_FILE = "HelloWorld/Docuflo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Docuflo;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

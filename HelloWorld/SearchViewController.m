@@ -11,13 +11,14 @@
 #import "DMSViewController.h"
 #import "ProfileViewController.h"
 #import "pdfView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SearchViewController ()
 
 @end
 
 @implementation SearchViewController
-@synthesize UserNameTxt,ProfileNameTxt;
+@synthesize UserNameTxt,ProfileNameTxt, SView;
 
 NSString *temp;
 int count;
@@ -60,18 +61,19 @@ NSString *strImageName;
 
 - (IBAction)BackBtn:(id)sender {
 	
-	DMSViewController *controller = [[DMSViewController alloc]init];
-	[self presentViewController:controller animated:YES completion:Nil];
+	UITapGestureRecognizer *tapImageRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(displayOldView:)];
+	
+	[[NSBundle mainBundle] loadNibNamed:@"PopupView" owner:self options:nil];
+	CATransition *transition = [CATransition animation];
+	transition.duration = 0.2;
+	transition.type = kCATransitionMoveIn;
+	[SView.layer addAnimation:transition forKey:nil];
+	[self.view addGestureRecognizer:tapImageRecognizer];
+	[self.view addSubview:SView];
+	
 }
 
-- (IBAction)SearchBtn:(id)sender
-{
-	
-	[self parseXMLFileAtURL];
-	[self.SearchTableView reloadData];
-	
-	[UserNameTxt resignFirstResponder];
-}
+
 
 - (IBAction)TxtDidEnd:(id)sender {
 	
@@ -376,4 +378,28 @@ NSString *strImageName;
 
     
 }
+
+
+-(IBAction)displayOldView:(id)sender {
+	
+	
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:0.5f];
+	//	SView.transform = CGAffineTransformMakeTranslation(SView.frame.origin.x, 480.0f + (SView.frame.size.height/2));
+	
+	SView.transform = CGAffineTransformMakeTranslation(-300,SView.frame.origin.y);
+	[UIView commitAnimations];
+}
+
+- (IBAction)LogoutBtn:(id)sender {
+	DMSViewController *controller = [[DMSViewController alloc]init];
+	[self presentViewController:controller animated:YES completion:Nil];
+	
+}
+
+- (IBAction)UploadBtn:(id)sender {
+	
+	[self upload:nil];
+}
+
 @end

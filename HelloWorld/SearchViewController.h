@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface SearchViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
 	
@@ -16,6 +17,7 @@
 	NSString *currentElement;
 	NSMutableString *ElementValue;
 	BOOL errorParsing;
+	
 
 }
 
@@ -23,13 +25,21 @@
 @property (weak, nonatomic) IBOutlet UITextField *UserNameTxt;
 @property (weak, nonatomic) IBOutlet UITableView *SearchTableView;
 @property (strong, nonatomic) IBOutlet UILabel *Type;
+@property (nonatomic, retain) IBOutlet UIView *SView;
 
 
 - (IBAction)BackBtn:(id)sender;
+- (IBAction)displayOldView:(id)sender;
+- (IBAction)LogoutBtn:(id)sender;
+- (IBAction)AddBtn:(id)sender;
+- (IBAction)UploadBtn:(id)sender;
+
+
 - (IBAction)SearchBtn:(id)sender;
 - (IBAction)TxtDidEnd:(id)sender;
-- (void)parseXMLFileAtURL:(NSString *)URL;
+- (void)parseXMLFileAtURL;
 - (IBAction)upload:(id)sender;
+
 
 
 @end

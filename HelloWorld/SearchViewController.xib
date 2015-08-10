@@ -20,6 +20,10 @@
             <subviews>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="background1.png" translatesAutoresizingMaskIntoConstraints="NO" id="crE-V0-jDw">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Y8F-dW-ZNd" appends="YES" id="ulp-o6-2yB"/>
+                    </connections>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-RM-U4T">
                     <rect key="frame" x="3" y="79" width="313" height="28"/>
@@ -42,7 +46,7 @@
                     <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                     <items>
                         <navigationItem title="Search Profile" id="n4x-3D-sbb">
-                            <barButtonItem key="leftBarButtonItem" title="Logout" style="done" id="xbu-1m-6x1">
+                            <barButtonItem key="leftBarButtonItem" image="Menu.png" style="done" id="xbu-1m-6x1">
                                 <connections>
                                     <action selector="BackBtn:" destination="-1" id="19N-Bd-brm"/>
                                 </connections>
@@ -82,8 +86,14 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="478" y="234"/>
         </view>
+        <swipeGestureRecognizer direction="left" id="Y8F-dW-ZNd">
+            <connections>
+                <action selector="displayOldView:" destination="-1" id="bQm-Gw-XhP"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
     <resources>
+        <image name="Menu.png" width="22" height="16"/>
         <image name="background1.png" width="1200" height="1920"/>
         <image name="upload1.png" width="128" height="128"/>
     </resources>
