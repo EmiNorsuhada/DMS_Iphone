@@ -11,27 +11,35 @@
 
 @implementation pdfView
 
-@synthesize BtnClose;
+@synthesize BtnClose,webView,lbl1,lblApp,lblName,lblIMG;
 
 
 - (void)viewDidLoad {
 	
+    
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = rect.size;
+    NSLog(@"size: %f", screenSize.height);
+
 	
-	CGRect rect = [[UIScreen mainScreen] bounds];
-	CGSize screenSize = rect.size;
-	NSLog(@"size: %f", screenSize.height);
-	UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(3,130,320,568)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        webView = [[UIWebView alloc] initWithFrame:CGRectMake(3,130,750,568)];
+        lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 770, 120)];
+    
+    }
+    else
+    {
+        webView = [[UIWebView alloc] initWithFrame:CGRectMake(3,130,320,568)];
+        lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 120)];
+    }
+
+    
+    
 	webView.scalesPageToFit = YES;
-    
     webView.delegate = self;
-    
-//    UINavigationBar *myBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 15, 320, 50)];
-//    self.navigationItem.title =@"View";
-//    [self.view addSubview:myBar];
-	
 	NSUserDefaults *pdfURL = [NSUserDefaults standardUserDefaults];
 	NSString *strURL = [pdfURL stringForKey:@"URL"];
-	
 	NSURL *targetURL = [NSURL URLWithString:strURL];
 	NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
 	[webView loadRequest:request];
@@ -51,10 +59,6 @@
 	[BtnClose setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
 	[self.view addSubview:BtnClose];
     
-    //    NSString *NameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"Name"];
-    //    NSString *ImageNameValue = [[articles objectAtIndex:indexPath.row ]objectForKey:@"ImageName"];
-    //    NSString * IdNO =[[articles objectAtIndex:indexPath.row ]objectForKey:@"IDNo"];
-    
     NSString *NameValue = [[NSUserDefaults standardUserDefaults]
                            stringForKey:@"NameValue"];
     
@@ -65,7 +69,7 @@
     NSString *IdNO = [[NSUserDefaults standardUserDefaults]
                       stringForKey:@"ID"];
     
-    UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 120)];
+    
     lbl1.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.7f];
     lbl1.textColor=[UIColor whiteColor];
     lbl1.userInteractionEnabled=NO;
@@ -79,30 +83,23 @@
     lblNAme.text =NameValue;
     [self.view addSubview:lblNAme];
     
-    UILabel *lblApp = [[UILabel alloc] initWithFrame:CGRectMake(62, 65, 200, 30)];
-    //  lblNAme.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.5f];
+    lblApp = [[UILabel alloc] initWithFrame:CGRectMake(62, 65, 200, 30)];
     lblApp.textColor=[UIColor whiteColor];
     lblApp.backgroundColor=[UIColor clearColor];
     lblApp.userInteractionEnabled=NO;
     lblApp.text =IdNO;
     [self.view addSubview:lblApp];
     
-    UILabel *lblIMG = [[UILabel alloc] initWithFrame:CGRectMake(62, 85, 200, 30)];
-    //  lblNAme.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.5f];
+    lblIMG = [[UILabel alloc] initWithFrame:CGRectMake(62, 85, 200, 30)];
     lblIMG.textColor=[UIColor whiteColor];
     lblIMG.userInteractionEnabled=NO;
     lblIMG.text =ImageNameValue;
     [self.view addSubview:lblIMG];
 
-    
-    
-    
-    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self
                action:@selector(CloseX)
      forControlEvents:UIControlEventTouchDown];
-   // [button setTitle:@"Show View" forState:UIControlStateNormal];
     button.frame = CGRectMake(4.0, 16.0, 28.0, 28.0);
     UIImage *image = [UIImage imageNamed:@"close.png"];
     UIImageView *imageView = [[UIImageView alloc]initWithImage:image];

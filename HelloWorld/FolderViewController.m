@@ -54,16 +54,30 @@ NSString *folderDir;
 							  @"1", @"FolderID",
 							  nil];
 	[PathHist addObject:[tempD copy]];
-	
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button addTarget:self
+                   action:@selector(backFolder:)
+         forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"Choose the location" forState:UIControlStateNormal];
+        button.tag = 1001;
+        button.frame = CGRectMake(230, 78, 280, 40);
+        [self.view addSubview:button];
+    } else
+    {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button addTarget:self
+                   action:@selector(backFolder:)
+         forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"Choose the location" forState:UIControlStateNormal];
+        button.tag = 1001;
+        button.frame = CGRectMake(16, 78, 280, 40);
+        [self.view addSubview:button];
+        
+    }
 
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[button addTarget:self
-			   action:@selector(backFolder:)
-	 forControlEvents:UIControlEventTouchUpInside];
-	[button setTitle:@"Choose the location" forState:UIControlStateNormal];
-	button.tag = 1001;
-	button.frame = CGRectMake(16, 78, 280, 40);
-	[self.view addSubview:button];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,10 +86,20 @@ NSString *folderDir;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)BackBtn:(id)sender {
-	
-	ProfileViewController *controller = [[ProfileViewController alloc]init];
-	[self presentViewController:controller animated:YES completion:Nil];
+- (IBAction)BackBtn:(id)sender
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        IndexViewController *controller = [[IndexViewController alloc] initWithNibName:@"IndexViewController_IPAD@" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+    }
+    else
+    {
+        IndexViewController *controller = [[IndexViewController alloc] initWithNibName:@"IndexViewController" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    }
+
 }
 
 - (IBAction)SearchBtn:(id)sender
@@ -259,8 +283,19 @@ NSString *folderDir;
         
 		[PathHist removeLastObject];
 		[articles addObjectsFromArray:PrevArticles];
-		APPViewController *viewController = [[APPViewController alloc] init];
-		[self presentViewController:viewController animated:YES completion:nil];
+        
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            APPViewController *controller = [[APPViewController alloc] initWithNibName:@"APPViewController_IPAD@" bundle:nil];
+            [self presentViewController:controller animated:YES completion:Nil];
+        }
+        else
+        {
+            APPViewController *controller = [[APPViewController alloc] initWithNibName:@"APPViewController" bundle:nil];
+            [self presentViewController:controller animated:YES completion:Nil];
+            
+        }
 	}
 }
 
@@ -330,6 +365,7 @@ NSString *folderDir;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView.backgroundColor = [UIColor clearColor];
 }

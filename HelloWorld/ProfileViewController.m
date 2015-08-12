@@ -62,8 +62,19 @@ NSString *strImageName;
 
 - (IBAction)BackBtn:(id)sender {
 	
-	SearchViewController *controller = [[SearchViewController alloc]init];
-	[self presentViewController:controller animated:YES completion:Nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        SearchViewController *controller = [[SearchViewController alloc] initWithNibName:@"SearchViewController_IPAD@" bundle:nil];
+        
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+    } else
+    {
+        SearchViewController *controller = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    }
+
 }
 
 - (IBAction)SearchBtn:(id)sender
@@ -267,11 +278,19 @@ NSString *strImageName;
     
     [[NSUserDefaults standardUserDefaults] setObject:profileName forKey:@"profileName"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-
     
-    IndexViewController *viewController = [[IndexViewController alloc] init];
-    [self presentViewController:viewController animated:YES completion:nil];
-    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        IndexViewController *controller = [[IndexViewController alloc] initWithNibName:@"IndexViewController_IPAD@" bundle:nil];
+        
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+    } else
+    {
+        IndexViewController *controller = [[IndexViewController alloc] initWithNibName:@"IndexViewController" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    }
 }
 
 @end

@@ -19,9 +19,19 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    DMSViewController *viewController = [[DMSViewController alloc] initWithNibName:@"DMSViewController" bundle:nil];
-    self.window.rootViewController = viewController;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        DMSViewController *viewController = [[DMSViewController alloc] initWithNibName:@"DMSViewController_IPAD@" bundle:nil];
+        self.window.rootViewController = viewController;
+    } else
+    {
+        DMSViewController *viewController = [[DMSViewController alloc] initWithNibName:@"DMSViewController" bundle:nil];
+        self.window.rootViewController = viewController;
 
+    }
+
+   
     [self.window makeKeyAndVisible];
     return YES;
 }

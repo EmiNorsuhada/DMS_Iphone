@@ -111,9 +111,21 @@
     
     if (rangeValue.length > 0)
     {
-        SearchViewController *controller = [[SearchViewController alloc]init];
-        [self presentViewController:controller animated:YES completion:Nil];
-    }
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            SearchViewController *controller = [[SearchViewController alloc] initWithNibName:@"SearchViewController_IPAD@" bundle:nil];
+
+            
+            [self presentViewController:controller animated:YES completion:Nil];
+        } else
+        {
+             SearchViewController *controller = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+            [self presentViewController:controller animated:YES completion:Nil];
+            
+        }
+
+            }
     else if (rangeValue1.length > 0)
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DMS" message:@"Incorrect User Name or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];

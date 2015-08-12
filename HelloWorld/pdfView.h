@@ -15,7 +15,8 @@
 }
 
 @property(nonatomic,retain) UIButton* BtnClose;
-
+@property(nonatomic,retain) UIWebView *webView;
+@property(nonatomic,retain) UILabel *lbl1,*lblApp,*button,*lblName,*lblIMG;
 
 
 

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>06501C40-EE09-4AD1-8990-81AEDE463B0E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Docuflo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F2F00C323B2E3CEAFEA7C651B0F529418FCC212F</key>
 		<string>https://github.com/EmiNorsuhada/DMS_Iphone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Docuflo.xcodeproj</string>
+	<string>Docuflo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F2F00C323B2E3CEAFEA7C651B0F529418FCC212F</key>

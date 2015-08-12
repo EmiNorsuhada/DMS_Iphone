@@ -67,9 +67,20 @@ bool proceed;
 }
 
 - (IBAction)BackBtn:(id)sender {
-	
-	ProfileViewController *controller = [[ProfileViewController alloc]init];
-	[self presentViewController:controller animated:YES completion:Nil];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        ProfileViewController *controller = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController_IPAD@" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    }
+    else
+    {
+        ProfileViewController *controller = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+    }
+
+
 }
 
 - (IBAction)SearchBtn:(id)sender
@@ -248,21 +259,44 @@ bool proceed;
 			
 			labelName = [[articles objectAtIndex:m] objectForKey:@"colDesc"];
 //			NSLog(@"label name: %@",labelName);
-			
-			addY = addY + 30;
-			
-			UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 110+addY, 280, 25)];
-			textField.borderStyle = UITextBorderStyleRoundedRect;
-			textField.font = [UIFont systemFontOfSize:15];
-			textField.placeholder = labelName;
-			textField.tag = m+1;
-			textField.autocorrectionType = UITextAutocorrectionTypeNo;
-			textField.keyboardType = UIKeyboardTypeDefault;
-			textField.returnKeyType = UIReturnKeyDone;
-			textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-			textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-			textField.delegate = self;
-			[self.view addSubview:textField];
+            
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                addY = addY + 70;
+                
+                
+                UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(40, 110+addY, 640, 45)];
+                textField.borderStyle = UITextBorderStyleRoundedRect;
+                textField.font = [UIFont systemFontOfSize:15];
+                textField.placeholder = labelName;
+                textField.tag = m+1;
+                textField.autocorrectionType = UITextAutocorrectionTypeNo;
+                textField.keyboardType = UIKeyboardTypeDefault;
+                textField.returnKeyType = UIReturnKeyDone;
+                textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+                textField.delegate = self;
+                [self.view addSubview:textField];
+                
+            } else
+            {
+                addY = addY + 30;
+                
+                UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 110+addY, 280, 25)];
+                textField.borderStyle = UITextBorderStyleRoundedRect;
+                textField.font = [UIFont systemFontOfSize:15];
+                textField.placeholder = labelName;
+                textField.tag = m+1;
+                textField.autocorrectionType = UITextAutocorrectionTypeNo;
+                textField.keyboardType = UIKeyboardTypeDefault;
+                textField.returnKeyType = UIReturnKeyDone;
+                textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+                textField.delegate = self;
+                [self.view addSubview:textField];
+
+                
+            }
 		}
 	}
 }
@@ -307,10 +341,20 @@ bool proceed;
         [[NSUserDefaults standardUserDefaults] setObject:FirstParam forKey:@"combineTest"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            FolderViewController *controller = [[FolderViewController alloc] initWithNibName:@"FolderViewController_IPAD@" bundle:nil];
+            [self presentViewController:controller animated:YES completion:Nil];
+            
+        }
+        else
+        {
+            FolderViewController *controller = [[FolderViewController alloc] initWithNibName:@"FolderViewController" bundle:nil];
+            [self presentViewController:controller animated:YES completion:Nil];
+        }
+        
 
-		FolderViewController *viewController = [[FolderViewController alloc] init];
-		[self presentViewController:viewController animated:YES completion:nil];
-	}
+    }
 	
 }
 
