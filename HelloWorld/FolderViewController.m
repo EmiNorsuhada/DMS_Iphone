@@ -361,15 +361,28 @@ NSString *folderDir;
 			
         }
     }
-    
-	UIImage *image = [UIImage   imageNamed:@"folder_next.png"];
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-	CGRect frame = CGRectMake(cell.frame.size.width  - image.size.width, cell.frame.size.height - image.size.height, image.size.width, image.size.height);
-	button.frame = frame;
-	[button setBackgroundImage:image forState:UIControlStateNormal];
-	[button addTarget:self action:@selector(didTapStar:event:)  forControlEvents:UIControlEventTouchUpInside];
-	button.backgroundColor = [UIColor clearColor];
-	cell.accessoryView = button;
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	{
+		UIImage *image = [UIImage   imageNamed:@"folder_next.png"];
+		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+		CGRect frame = CGRectMake(cell.frame.size.width  - image.size.width, cell.frame.size.height - image.size.height, image.size.width, image.size.height);
+		button.frame = frame;
+		[button setBackgroundImage:image forState:UIControlStateNormal];
+		[button addTarget:self action:@selector(didTapStar:event:)  forControlEvents:UIControlEventTouchUpInside];
+		button.backgroundColor = [UIColor clearColor];
+		cell.accessoryView = button;
+
+	}
+	else
+	{
+		[cell setAccessoryType:UITableViewCellAccessoryDetailButton];
+		
+	}
+
+	
+	
+	
 	
 	
     return cell;
