@@ -49,6 +49,7 @@
 		C30D26691B788B1100543898 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D26671B788B1100543898 /* logout.png */; };
 		C30D266A1B788B1100543898 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D26681B788B1100543898 /* setting.png */; };
 		C30D266C1B788BEE00543898 /* upload2.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D266B1B788BEE00543898 /* upload2.png */; };
+		C30D26701B7C641900543898 /* folder_next.png in Resources */ = {isa = PBXBuildFile; fileRef = C30D266F1B7C641900543898 /* folder_next.png */; };
 		C373F22E1B62364B0018639D /* Docuflo Logo.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C373F22D1B62364B0018639D /* Docuflo Logo.PNG */; };
 		C373F2321B65CF980018639D /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = C373F2311B65CF980018639D /* background1.png */; };
 		C3778C8C1B71AD96007F452C /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C3778C841B71AD96007F452C /* camera.png */; };
@@ -159,6 +160,7 @@
 		C30D26671B788B1100543898 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		C30D26681B788B1100543898 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		C30D266B1B788BEE00543898 /* upload2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload2.png; sourceTree = "<group>"; };
+		C30D266F1B7C641900543898 /* folder_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_next.png; sourceTree = "<group>"; };
 		C373F22D1B62364B0018639D /* Docuflo Logo.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Docuflo Logo.PNG"; sourceTree = "<group>"; };
 		C373F2311B65CF980018639D /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		C3778C841B71AD96007F452C /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				6AF003A91B7485FC003C618E /* Icon-60@3x-1.png */,
 				C30D266B1B788BEE00543898 /* upload2.png */,
 				6AF003AA1B7485FC003C618E /* Icon-40@2x-1.png */,
+				C30D266F1B7C641900543898 /* folder_next.png */,
 				C30D265B1B78873F00543898 /* Menu.png */,
 				C30D265D1B78873F00543898 /* show-menu-icon.png */,
 				C30D265E1B78873F00543898 /* user1.png */,
@@ -562,6 +565,7 @@
 				C30D26611B78873F00543898 /* Menu.png in Resources */,
 				C30D26631B78873F00543898 /* show-menu-icon.png in Resources */,
 				C30D26691B788B1100543898 /* logout.png in Resources */,
+				C30D26701B7C641900543898 /* folder_next.png in Resources */,
 				6AFC2D981B6B2E9F00C0861F /* FolderViewController.xib in Resources */,
 				C38476FD1B42532400063D90 /* Download_Files_4_You_Logo.png in Resources */,
 				C38476FB1B42530600063D90 /* 64px-Download_Files_4_You_Logo.png in Resources */,

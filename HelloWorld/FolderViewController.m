@@ -296,6 +296,7 @@ NSString *folderDir;
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	[PathHist removeLastObject];
+	[articles removeAllObjects];
 	[articles addObjectsFromArray:PrevArticles];
 	
 	
@@ -361,8 +362,16 @@ NSString *folderDir;
         }
     }
     
-    [cell setAccessoryType: UITableViewCellAccessoryDetailButton];
-    
+	UIImage *image = [UIImage   imageNamed:@"folder_next.png"];
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+	CGRect frame = CGRectMake(cell.frame.size.width  - image.size.width, cell.frame.size.height - image.size.height, image.size.width, image.size.height);
+	button.frame = frame;
+	[button setBackgroundImage:image forState:UIControlStateNormal];
+	[button addTarget:self action:@selector(didTapStar:event:)  forControlEvents:UIControlEventTouchUpInside];
+	button.backgroundColor = [UIColor clearColor];
+	cell.accessoryView = button;
+	
+	
     return cell;
 }
 
@@ -394,20 +403,13 @@ NSString *folderDir;
 	[PrevArticles addObjectsFromArray:articles];
 	
 	[self GoToSnap];
-//	[articles removeAllObjects];
-//	[self parseXMLFileAtURL:fID];
-//    
-//   
-//	[tableView beginUpdates];
-//	[tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-//			 withRowAnimation:UITableViewRowAnimationFade];
-//	[self.SearchTableView reloadData];
-//	[tableView endUpdates];
+
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
 	
+	NSLog(@"TAPBtnPress");
 	NSString *fID = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderID"];
 	NSString *fname = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderName"];
 	
@@ -423,7 +425,7 @@ NSString *folderDir;
 	[PrevArticles removeAllObjects];
 	[PrevArticles addObjectsFromArray:articles];
 	
-	[articles removeAllObjects];
+//	[articles removeAllObjects];
 	[self parseXMLFileAtURL:fID];
 	
 	
@@ -432,6 +434,19 @@ NSString *folderDir;
 			 withRowAnimation:UITableViewRowAnimationFade];
 	[self.SearchTableView reloadData];
 	[tableView endUpdates];
+	
+}
+
+- (void)didTapStar:(id)sender event:(id)event {
+	
+	
+	NSSet *touches = [event allTouches];
+	UITouch *touch = [touches anyObject];
+	CGPoint currentTouchPosition = [touch locationInView:self.SearchTableView];
+	NSIndexPath *indexPath = [self.SearchTableView indexPathForRowAtPoint: currentTouchPosition];
+	if (indexPath != nil){
+		[self tableView: self.SearchTableView accessoryButtonTappedForRowWithIndexPath: indexPath];
+	}
 	
 }
 
