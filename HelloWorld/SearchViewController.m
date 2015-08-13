@@ -65,18 +65,34 @@ NSString *strImageName;
 	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(displayOldView:)];
 	swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
 	
-	
-	[[NSBundle mainBundle] loadNibNamed:@"PopupView" owner:self options:nil];
-	CATransition *transition = [CATransition animation];
-	transition.duration = 0.2;
-	transition.type = kCATransitionMoveIn;
-	[SView.layer addAnimation:transition forKey:nil];
-	[self.view addGestureRecognizer:tapImageRecognizer];
-	[self.view addGestureRecognizer:swipeRecognizer];
-	[self.view addSubview:SView];
-	
-	[UserNameTxt resignFirstResponder];
-	
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        [[NSBundle mainBundle] loadNibNamed:@"PopupView_IPAD@" owner:self options:nil];
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.2;
+        transition.type = kCATransitionMoveIn;
+        [SView.layer addAnimation:transition forKey:nil];
+        [self.view addGestureRecognizer:tapImageRecognizer];
+        [self.view addGestureRecognizer:swipeRecognizer];
+        [self.view addSubview:SView];
+        
+        [UserNameTxt resignFirstResponder];
+
+    } else
+    {
+        [[NSBundle mainBundle] loadNibNamed:@"PopupView" owner:self options:nil];
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.2;
+        transition.type = kCATransitionMoveIn;
+        [SView.layer addAnimation:transition forKey:nil];
+        [self.view addGestureRecognizer:tapImageRecognizer];
+        [self.view addGestureRecognizer:swipeRecognizer];
+        [self.view addSubview:SView];
+        
+        [UserNameTxt resignFirstResponder];
+        
+    }
+
 	
 }
 
@@ -371,6 +387,8 @@ NSString *strImageName;
     [[NSUserDefaults standardUserDefaults] setObject:IdNO forKey:@"ID"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    
+    
     [pdfURL setObject:Url forKey:@"URL"];
     pdfView *viewController = [[pdfView alloc] init];
     [self presentViewController:viewController animated:YES completion:nil];
@@ -379,9 +397,18 @@ NSString *strImageName;
 
 - (IBAction)upload:(id)sender
 {
-    
-    ProfileViewController *controller = [[ProfileViewController alloc]init];
-    [self presentViewController:controller animated:YES completion:Nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        ProfileViewController *controller = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController_IPAD@" bundle:nil];
+        
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+    } else
+    {
+        ProfileViewController *controller = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    }
 
     
 }
@@ -398,10 +425,22 @@ NSString *strImageName;
 	[UIView commitAnimations];
 }
 
-- (IBAction)LogoutBtn:(id)sender {
-	DMSViewController *controller = [[DMSViewController alloc]init];
-	[self presentViewController:controller animated:YES completion:Nil];
-	
+- (IBAction)LogoutBtn:(id)sender
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        DMSViewController *controller = [[DMSViewController alloc] initWithNibName:@"DMSViewController_IPAD@" bundle:nil];
+        
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+    } else
+    {
+        DMSViewController *controller = [[DMSViewController alloc] initWithNibName:@"DMSViewController" bundle:nil];
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    }
+
+    
 }
 
 - (IBAction)UploadBtn:(id)sender {
