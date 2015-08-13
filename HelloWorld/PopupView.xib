@@ -26,7 +26,7 @@
                         <action selector="LogoutBtn:" destination="-1" eventType="touchUpInside" id="CNy-AF-8yc"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BAckground.png" translatesAutoresizingMaskIntoConstraints="NO" id="osi-6U-BgO">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background1.png" translatesAutoresizingMaskIntoConstraints="NO" id="osi-6U-BgO">
                     <rect key="frame" x="0.0" y="0.0" width="244" height="178"/>
                 </imageView>
                 <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hy-s3-247">
@@ -83,7 +83,7 @@
         </swipeGestureRecognizer>
     </objects>
     <resources>
-        <image name="BAckground.png" width="720" height="1280"/>
+        <image name="background1.png" width="1200" height="1920"/>
         <image name="logout.png" width="128" height="128"/>
         <image name="setting.png" width="128" height="128"/>
         <image name="upload2.png" width="128" height="128"/>

@@ -253,7 +253,7 @@ NSString *strImageName;
 		}
 	}
 	
-	[cell setAccessoryType: UITableViewCellAccessoryDetailButton];
+	[cell setAccessoryType: UITableViewCellAccessoryNone];
 	
 	return cell;
 }

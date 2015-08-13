@@ -28,8 +28,6 @@ NSString *colDesc;
 NSString *colData;
 NSString *folderDir;
 
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -253,49 +251,7 @@ NSString *folderDir;
         [articles addObject:[tempData copy]];
     }
 	else if ([elementName isEqualToString:@"FolderInfo"] && [FolderID isEqualToString:@"0"]){
-		
-		NSString *fname = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderName"];
-		UIButton *btn = (UIButton*)[self.view viewWithTag:1001];
-		if (PathHist.count == 2) {
-			[btn setTitle:@"Choose the location" forState:UIControlStateNormal];
-		}
-		else {
-			[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
-		}
-		
-		NSString *FolderPath = @"";
-		if (PathHist != 0) {
-			for (int a = 0; a < PathHist.count; a = a + 1) {
-				NSString *tempPath = [[PathHist objectAtIndex:a]objectForKey:@"FolderName"];
-				if ([FolderPath isEqualToString:@""]) {
-					FolderPath = tempPath;
-				}
-				else {
-					FolderPath = [NSString stringWithFormat:@"%@>%@", FolderPath, tempPath];
-				}
-			}
-		}
-	
-		NSLog(@"Folder Path: %@", FolderPath);
-        
-        [[NSUserDefaults standardUserDefaults] setObject:FolderPath forKey:@"FolderPath"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-		[PathHist removeLastObject];
-		[articles addObjectsFromArray:PrevArticles];
-        
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        {
-            APPViewController *controller = [[APPViewController alloc] initWithNibName:@"APPViewController_IPAD@" bundle:nil];
-            [self presentViewController:controller animated:YES completion:Nil];
-        }
-        else
-        {
-            APPViewController *controller = [[APPViewController alloc] initWithNibName:@"APPViewController" bundle:nil];
-            [self presentViewController:controller animated:YES completion:Nil];
-            
-        }
+		[self GoToSnap];
 	}
 }
 
@@ -309,6 +265,52 @@ NSString *folderDir;
 	} else {
 		NSLog(@"Error occurred during XML processing");
 	}
+}
+
+-(void)GoToSnap {
+	NSString *fname = [[PathHist objectAtIndex:PathHist.count-2]objectForKey:@"FolderName"];
+	UIButton *btn = (UIButton*)[self.view viewWithTag:1001];
+	if (PathHist.count == 2) {
+		[btn setTitle:@"Choose the location" forState:UIControlStateNormal];
+	}
+	else {
+		[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
+	}
+	
+	NSString *FolderPath = @"";
+	if (PathHist != 0) {
+		for (int a = 0; a < PathHist.count; a = a + 1) {
+			NSString *tempPath = [[PathHist objectAtIndex:a]objectForKey:@"FolderName"];
+			if ([FolderPath isEqualToString:@""]) {
+				FolderPath = tempPath;
+			}
+			else {
+				FolderPath = [NSString stringWithFormat:@"%@>%@", FolderPath, tempPath];
+			}
+		}
+	}
+	
+	NSLog(@"Folder Path: %@", FolderPath);
+	
+	[[NSUserDefaults standardUserDefaults] setObject:FolderPath forKey:@"FolderPath"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	[PathHist removeLastObject];
+	[articles addObjectsFromArray:PrevArticles];
+	
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	{
+		APPViewController *controller = [[APPViewController alloc] initWithNibName:@"APPViewController_IPAD@" bundle:nil];
+		[self presentViewController:controller animated:YES completion:Nil];
+	}
+	else
+	{
+		APPViewController *controller = [[APPViewController alloc] initWithNibName:@"APPViewController" bundle:nil];
+		[self presentViewController:controller animated:YES completion:Nil];
+		
+	}
+
 }
 
 
@@ -375,7 +377,38 @@ NSString *folderDir;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+	
     NSString *fID = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderID"];
+	NSString *fname = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderName"];
+	
+	UIButton *btn = (UIButton*)[self.view viewWithTag:1001];
+	[btn setTitle:[NSString stringWithFormat:@"<  %@", fname] forState:UIControlStateNormal];
+	
+	NSDictionary *tempD = [[NSDictionary alloc] initWithObjectsAndKeys:fname, @"FolderName",
+							  fID, @"FolderID",
+							  nil];
+	[PathHist addObject:[tempD copy]];
+	
+	PrevArticles = [[NSMutableArray alloc] init];
+	[PrevArticles removeAllObjects];
+	[PrevArticles addObjectsFromArray:articles];
+	
+	[self GoToSnap];
+//	[articles removeAllObjects];
+//	[self parseXMLFileAtURL:fID];
+//    
+//   
+//	[tableView beginUpdates];
+//	[tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+//			 withRowAnimation:UITableViewRowAnimationFade];
+//	[self.SearchTableView reloadData];
+//	[tableView endUpdates];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+	
+	NSString *fID = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderID"];
 	NSString *fname = [[articles objectAtIndex:indexPath.row]objectForKey:@"FolderName"];
 	
 	UIButton *btn = (UIButton*)[self.view viewWithTag:1001];
@@ -392,13 +425,14 @@ NSString *folderDir;
 	
 	[articles removeAllObjects];
 	[self parseXMLFileAtURL:fID];
-    
-   
+	
+	
 	[tableView beginUpdates];
 	[tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
 			 withRowAnimation:UITableViewRowAnimationFade];
 	[self.SearchTableView reloadData];
 	[tableView endUpdates];
+	
 }
 
 @end
